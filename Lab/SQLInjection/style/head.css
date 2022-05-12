@@ -1,0 +1,156 @@
+b{
+    color: #F0A500;
+}
+
+.h1 {
+    /* Web Security */
+
+
+    position: absolute;
+    width: 320px;
+    height: 36px;
+    left: 830px;
+    top: 322px;
+
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+
+    color: white;
+
+
+}
+
+.h2 {
+    /* 7 Sections */
+
+
+    position: absolute;
+    width: 79px;
+    height: 18px;
+    left: 858px;
+    top: 394px;
+
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+
+    color: white;
+
+}
+
+.bh2 {
+    /* silicon */
+
+
+    position: absolute;
+    width: 120px;
+    height: 35px;
+    left: 830px;
+    top: 385px;
+
+    background: linear-gradient(144.48deg, #28272F 9.13%, #040404 62.89%);
+    opacity: 0.7;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.4);
+    border-radius: 19px;
+}
+
+.h3 {
+    /* สวัสดีครับทุกท่านน !! ขอต้อนรับเข้าสู่ Lab ของ Web Security นะครับ */
+
+
+    position: absolute;
+    width: 658px;
+    height: 24px;
+    left: 830px;
+    top: 457px;
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: white;
+
+}
+
+.h4 {
+    /* โดยเราจะให้ทุกท่านได้ทดสอบกันในเว็บไซต์จำลองของเราที่ทำขึ้นมาเพื่อ */
+
+
+    position: absolute;
+    width: 573px;
+    height: 24px;
+    left: 830px;
+    top: 489px;
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+}
+
+.h5 {
+    /* ให้ได้ลองฝีมือลองของหลังจากที่เรียนแบบ Lecture กันมาเยอะแล้ว ลุยกันเลยย !! */
+
+
+    position: absolute;
+    width: 693px;
+    height: 30px;
+    left: 830px;
+    top: 518px;
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+}
+
+.h6 {
+    /* จัดทำโดย Aem Supachai */
+
+
+    position: absolute;
+    width: 169px;
+    height: 18px;
+    left: 899px;
+    top: 602px;
+
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+.icon1 {
+    /* Ellipse 7 */
+
+
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    left: 830px;
+    top: 585px;
+    border-radius: 50%;
+
+    background: #FFFFFF;
+    border: 5px solid #BD3F32;
+    box-sizing: border-box;
+}

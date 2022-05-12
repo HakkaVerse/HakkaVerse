@@ -1,0 +1,201 @@
+.dmp1 {
+    /* Download File PDF. */
+
+
+    position: absolute;
+    width: 426px;
+    height: 54px;
+    left: 430px;
+    top: 2433px;
+
+    font-weight: 900;
+    font-size: 45px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.dmp2 {
+    /* Download File PDF. */
+
+
+    position: absolute;
+    width: 426px;
+    height: 54px;
+    left: 1110px;
+    top: 2433px;
+
+    font-weight: 900;
+    font-size: 45px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+.m1 {
+    /* เอกสารสำหรับการเรียนรู้เพิ่มเติมในด้าน Security */
+
+
+    position: absolute;
+    width: 388px;
+    height: 24px;
+    left: 430px;
+    top: 2492px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #7C747E;
+}
+
+.m2 {
+    /* เอกสารสำหรับการเรียนรู้เพิ่มเติมในด้าน Security */
+
+
+    position: absolute;
+    width: 388px;
+    height: 24px;
+    left: 1110px;
+    top: 2492px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #7C747E;
+}
+
+.mm1 {
+    /* รวมคำศัพท์น่ารู้สำหรับด้าน CyberSecurity */
+
+
+    position: absolute;
+    width: 427px;
+    height: 24px;
+    left: 430px;
+    top: 2549px;
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.mm2{
+    /* รวมคำศัพท์น่ารู้สำหรับด้าน CyberSecurity */
+
+
+position: absolute;
+width: 370px;
+height: 24px;
+left: 1110px;
+top: 2549px;
+font-weight: 900;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+}
+
+.b1 {
+    /* silicon */
+
+
+    position: absolute;
+    width: 240px;
+    height: 69px;
+    left: 430px;
+    top: 2614px;
+
+    background: linear-gradient(90deg, #CB356B 0%, #BD3F32 100%);
+    opacity: 0.7;
+    border-radius: 35px;
+}
+
+.b2 {
+    /* silicon */
+
+
+    position: absolute;
+    width: 240px;
+    height: 69px;
+    left: 1110px;
+    top: 2614px;
+
+    background: linear-gradient(90deg, #CB356B 0%, #BD3F32 100%);
+    opacity: 0.7;
+    border-radius: 35px;
+}
+
+.btext1 {
+    /* ดาวน์โหลด */
+    position: absolute;
+    width: 89px;
+    height: 24px;
+    left: 532px;
+    top: 2636px;
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+
+.btext2 {
+    /* ดาวน์โหลด */
+
+
+    position: absolute;
+    width: 89px;
+    height: 24px;
+    left: 1212px;
+    top: 2636px;
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.bicon1 {
+    /* ic:baseline-download-for-offline */
+
+
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    left: 479px;
+    top: 2627px;
+
+}
+
+.bicon2 {
+    /* ic:baseline-download-for-offline */
+
+
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    left: 1159px;
+    top: 2627px;
+}

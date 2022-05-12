@@ -1,0 +1,190 @@
+.test {
+  width: 15rem;
+  border-radius: 18px;
+  background: linear-gradient(144.48deg, #28272F 9.13%, #040404 62.89%);
+  height: 350px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.4);
+}
+
+
+.test::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* background: linear-gradient(90deg, #EB8145, #1E99FE,#6A38F5,#EA245A); */
+  background: linear-gradient(45deg, #EB8145, #1E99FE, #6A38F5, #EA245A);
+  z-index: -1;
+  filter: blur(15px);
+}
+
+.test:hover {
+  box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.4);
+}
+
+.testlist-card {
+  width: 90%;
+  height: 180px;
+  border-radius: 19px;
+  margin: auto;
+}
+
+.testlist-card:hover {
+  width: 90%;
+  height: 180px;
+  background: linear-gradient(144.48deg, #28272F 9.13%, #040404 62.89%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.4);
+  border-radius: 19px;
+  margin: auto;
+}
+
+.testlist-card-2 {
+  width: 90%;
+  height: 180px;
+  border-radius: 19px;
+  margin: auto;
+}
+.testlist-card-2:hover {
+  width: 90%;
+  height: 180px;
+  background: linear-gradient(144.48deg, #28272F 9.13%, #040404 62.89%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.4);
+  border-radius: 19px;
+  margin: auto;
+}
+
+.testlist-num {
+  position: absolute;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-size: 30px;
+  font-weight: 900;
+  padding-left: 36px;
+  padding-top: 25px;
+  color: white;
+}
+.testlist-num-more {
+  position: absolute;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-size: 30px;
+  font-weight: 900;
+  padding-left: 28px;
+  padding-top: 25px;
+  color: white;
+}
+.circle {
+  position: absolute;
+  padding-left: 15px;
+  padding-top: 15px;
+  width: 150;
+}
+
+.pass {
+  position: absolute;
+  width: 90px;
+  height: 30px;
+  margin-top: 120px;
+  margin-left: 18px;
+  background: linear-gradient(90deg, #B92B27 0%, #1565C0 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.score {
+  position: absolute;
+  width: 90px;
+  height: 30px;
+  margin-top: 120px;
+  margin-left: 130px;
+  background: linear-gradient(90deg, #B92B27 0%, #1565C0 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.iconcheck{
+  position: absolute;
+  font-size: 30px;
+  margin-top: 113px;
+  margin-left: 230px;
+  color: #4AD772;
+
+}
+
+.pass-text {
+  font-weight: 900;
+  font-size: 17px;
+  line-height: 27px;
+  align-items: center;
+  color: #FFFFFF;
+  line-height: 30px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.score-text {
+  font-weight: 900;
+  font-size: 17px;
+  align-items: center;
+  color: #FFFFFF;
+  line-height: 30px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.testing-card {
+  margin-top: 50px;
+  width: 90%;
+  background: linear-gradient(144.48deg, #28272F 9.13%, #040404 62.89%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.4);
+  border-radius: 19px;
+}
+
+.testing-text {
+  padding-top: 30px;
+  padding-left: 80px;
+}
+
+.testing-title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+b {
+  color: #F0A500;
+}
+
+.form-check-input:checked {
+  background: #F0A500;
+  border-color: #F0A500;
+}
+
+.inputtest {
+  width: 80%;
+  height: 80px;
+  padding-left: 20px;
+  border: 15px solid #F0A500;
+  border-radius: 25px;
+
+}
+
+.inputtest:disabled {
+  background: white;
+}
+
+.error-text {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 80px;
+  line-height: 100%;
+
+  color: #F0A500;
+}

@@ -1,0 +1,781 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit&display=swap');
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+  }
+body {
+    font-family: 'Kanit', sans-serif;
+    background: #040404;
+	max-width: 1080px; 
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 10px;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.card1 {
+    position: absolute;
+    width: 380px;
+    height: 560px;
+    top: 143px;
+    left: 350px;
+
+    background: linear-gradient(144.48deg, #28272F 9.13%, #040404 62.89%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.4);
+    border-radius: 19px;
+}
+
+.card1_ {
+    /* Rectangle 2 */
+
+
+    position: absolute;
+    width: 775px;
+    height: 425px;
+    left: 795px;
+    top: 278px;
+
+    background: rgba(99, 108, 132, 0.26);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 30px;
+}
+
+.card2 {
+    /* silicon */
+    position: absolute;
+    width: 1220px;
+    height: 255px;
+    left: 350px;
+    top: 972px;
+
+    background: linear-gradient(144.48deg, #28272F 9.13%, #040404 62.89%);
+    opacity: 0.7;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.4);
+    border-radius: 19px;
+}
+
+.card3 {
+    /* Rectangle 4 */
+
+
+    position: absolute;
+    width: 540px;
+    height: 343px;
+    left: 350px;
+    top: 2386px;
+
+    background: rgba(99, 108, 132, 0.26);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 30px;
+}
+
+.card4 {
+    /* Rectangle 454 */
+    position: absolute;
+    width: 540px;
+    height: 343px;
+    left: 1030px;
+    top: 2386px;
+
+    background: rgba(99, 108, 132, 0.26);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 30px;
+}
+
+.card5 {
+    /* Rectangle 5 */
+
+
+    position: absolute;
+    width: 740px;
+    height: 343px;
+    left: 250px;
+    top: 3235px;
+
+    background: rgba(99, 108, 132, 0.26);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 30px;
+}
+
+.card6 {
+    /* Rectangle 450 */
+
+
+    position: absolute;
+    width: 740px;
+    height: 343px;
+    left: 930px;
+    top: 3790px;
+
+    background: rgba(99, 108, 132, 0.26);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 30px;
+}
+
+.bg1 {
+    position: absolute;
+    width: 1920px;
+    height: 770px;
+    left: 0px;
+    top: 9px;
+    display: block;
+    object-fit: cover;
+}
+
+.bg2 {
+    /* Hexagon_keyhole 1 */
+
+    display: block;
+    object-fit: cover;
+    position: absolute;
+    width: 1920px;
+    height: 779px;
+    left: 0px;
+    top: 1309px;
+
+}
+
+.img1 {
+    /* Saly-13 */
+
+
+    position: absolute;
+    width: 680px;
+    height: 763px;
+    left: 990px;
+    top: 2878px;
+
+    background: url(Saly-5.png);
+}
+
+.img2 {
+    /* Saly-11 */
+    position: absolute;
+    width: 481px;
+    height: 556px;
+    left: 249px;
+    top: 3630px;
+
+    background: url(Saly-11.png);
+}
+
+.img3{
+    /* malware_protection 1 */
+
+
+position: absolute;
+width: 360px;
+height: 295px;
+left: 360px;
+top: 275px;
+
+}
+
+.hakka {
+    /* HAKKA V.LAB */
+
+
+    position: absolute;
+    width: 597px;
+    height: 103px;
+    left: 795px;
+    top: 139px;
+
+    font-weight: 900;
+    font-size: 85px;
+    line-height: 103px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+}
+
+.text1 {
+    /* บทเรียนทั้งหมด */
+
+
+    position: absolute;
+    left: 764px;
+    top: 839px;
+
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 73px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+}
+
+.text2 {
+    /* เนื้อหาเพิ่มเติม */
+
+
+    position: absolute;
+    height: 73px;
+    left: 781px;
+    top: 2148px;
+
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 73px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+}
+
+.text4 {
+    /* ผู้รับผิดชอบในการออกแบบแลปทดลอง */
+
+
+    position: absolute;
+    width: 727px;
+    height: 54px;
+    left: 250px;
+    top: 3129px;
+
+    font-weight: 900;
+    font-size: 45px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.text5 {
+    /* ผู้รับผิดชอบในการทำเนื้อหาแลปทดลอง */
+
+
+    position: absolute;
+    width: 727px;
+    height: 54px;
+    left: 943px;
+    top: 3690px;
+
+    font-weight: 900;
+    font-size: 45px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.shadow1 {
+    position: absolute;
+    width: 1920px;
+    height: 164px;
+    left: -10px;
+    top: 616px;
+
+    background: linear-gradient(180deg, rgba(4, 4, 4, 0) 0%, #040404 100%);
+}
+
+.shadow2 {
+    /* Rectangle 456 */
+
+
+    position: absolute;
+    width: 1920px;
+    height: 164px;
+    left: 0px;
+    top: 1924px;
+
+    background: linear-gradient(180deg, rgba(4, 4, 4, 0) 0%, #040404 100%);
+
+}
+
+
+
+.incard5 {
+    /* Rectangle 6 */
+
+
+    position: absolute;
+    width: 315px;
+    height: 306px;
+    left: 270px;
+    top: 3254px;
+
+    background: linear-gradient(180deg, rgba(101, 78, 163, 0.5) 0%, rgba(234, 175, 200, 0.5) 100%);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 30px;
+}
+
+.incard6 {
+    /* Rectangle 452 */
+
+
+    position: absolute;
+    width: 315px;
+    height: 306px;
+    left: 950px;
+    top: 3809px;
+
+    background: linear-gradient(180deg, rgba(101, 78, 163, 0.5) 0%, rgba(234, 175, 200, 0.5) 100%);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 30px;
+}
+
+
+.sectionCard1 {
+    /* Rectangle 457 */
+    display: none;
+    position: absolute;
+    width: 220px;
+    height: 100px;
+    left: 410px;
+    top: 998px;
+
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    background: linear-gradient(90deg, #CB356B 0%, #BD3F32 100%);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 19px;
+}
+
+
+.sectionCard2 {
+    /* Rectangle 457 */
+    display: none;
+    position: absolute;
+    width: 220px;
+    height: 100px;
+    left: 630px;
+    top: 998px;
+    background: linear-gradient(90deg, #CB356B 0%, #BD3F32 100%);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 19px;
+}
+
+.sectionCard3 {
+    /* Rectangle 457 */
+    display: none;
+    position: absolute;
+    width: 220px;
+    height: 100px;
+    left: 850px;
+    top: 998px;
+    background: linear-gradient(90deg, #CB356B 0%, #BD3F32 100%);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 19px;
+}
+
+.sectionCard4 {
+    /* Rectangle 457 */
+    display: none;
+    position: absolute;
+    width: 220px;
+    height: 100px;
+    left: 1075px;
+    top: 998px;
+    background: linear-gradient(90deg, #CB356B 0%, #BD3F32 100%);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 19px;
+}
+
+.sectionCard5 {
+    /* Rectangle 457 */
+    display: none;
+    position: absolute;
+    width: 220px;
+    height: 100px;
+    left: 1300px;
+    top: 998px;
+    background: linear-gradient(90deg, #CB356B 0%, #BD3F32 100%);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 19px;
+}
+
+.sectionCard6 {
+    /* Rectangle 457 */
+    display: none;
+    position: absolute;
+    width: 220px;
+    height: 100px;
+    left: 410px;
+    top: 1100px;
+
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    background: linear-gradient(90deg, #CB356B 0%, #BD3F32 100%);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 19px;
+}
+.sectionCard7 {
+    /* Rectangle 457 */
+    display: none;
+    position: absolute;
+    width: 220px;
+    height: 100px;
+    left: 630px;
+    top: 1100px;
+
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    background: linear-gradient(90deg, #CB356B 0%, #BD3F32 100%);
+    box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 19px;
+}
+.t0 {
+    /* เนื้อหาบทนี้ */
+
+    position: absolute;
+    width: 92px;
+    height: 24px;
+    left: 493px;
+    top: 1021px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    align-items: center;
+
+    color: #F0A500;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.t1 {
+    /* LEVEL ONE */
+
+
+    position: absolute;
+    width: 111px;
+    height: 24px;
+    left: 713px;
+    top: 1021px;
+
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    align-items: center;
+
+    color: #F0A500;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.t2 {
+    /* LEVEL ONE */
+
+
+    position: absolute;
+    width: 135px;
+    height: 24px;
+    left: 933px;
+    top: 1021px;
+
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    align-items: center;
+
+    color: #F0A500;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.t3 {
+    /* LEVEL ONE */
+
+
+    position: absolute;
+    width: 124px;
+    height: 24px;
+    left: 1153px;
+    top: 1021px;
+
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    align-items: center;
+
+    color: #F0A500;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.t4 {
+    /* LEVEL ONE */
+
+
+    position: absolute;
+    width: 114px;
+    height: 24px;
+    left: 1373px;
+    top: 1021px;
+
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    align-items: center;
+
+    color: #F0A500;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.t5 {
+    /* LEVEL ONE */
+
+
+    position: absolute;
+    width: 114px;
+    height: 24px;
+    left: 493px;
+    top: 1121px;
+
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    align-items: center;
+
+    color: #F0A500;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.t6 {
+    /* LEVEL ONE */
+
+
+    position: absolute;
+    width: 109px;
+    height: 23px;
+    left: 713px;
+    top: 1121px;
+
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    align-items: center;
+
+    color: #F0A500;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.s0 {
+    /* Ellipse 3 */
+
+
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    left: 437px;
+    top: 1029px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+
+    color: #040404;
+    background: #FFFFFF;
+    opacity: 0.8;
+
+}
+
+.s1 {
+    /* Ellipse 8 */
+
+
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    left: 657px;
+    top: 1029px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+
+    background: #FFFFFF;
+    opacity: 0.8;
+}
+
+.s2 {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    left: 877px;
+    top: 1028px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+
+    background: #FFFFFF;
+    opacity: 0.8;
+}
+
+.s3 {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    left: 1097px;
+    top: 1028px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+
+    background: #FFFFFF;
+    opacity: 0.8;
+}
+
+.s4 {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    left: 1317px;
+    top: 1028px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+
+    background: #FFFFFF;
+    opacity: 0.8;
+}
+
+.s5 {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    left: 437px;
+    top: 1129px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+
+    background: #FFFFFF;
+    opacity: 0.8;
+}
+
+.s6 {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    left: 657px;
+    top: 1129px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+
+    background: #FFFFFF;
+    opacity: 0.8;
+}
+

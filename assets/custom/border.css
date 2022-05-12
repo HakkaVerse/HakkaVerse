@@ -1,0 +1,28 @@
+.custom-border {
+    position:relative;
+    width: 100%; 
+    padding:30px;
+  }
+  .custom-border::before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    border-radius:18px;
+    padding:3px;
+    background:linear-gradient(45deg,#B92B27,#1565C0); 
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude; 
+  }
+
+  
+.profile-card{
+  width: 100%;
+  background: radial-gradient(100% 30466.12% at 0% 100%, #141E30 0%, #243B55 100%);
+  border-radius: 15px;
+}

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script defer src="assets/js/all.js?v=2"></script>
+    <script src="/js/ajax.js"></script>
+    <link href="assets/css/all.css?v=1" rel="stylesheet">
+    <title>Title</title>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm p-3 mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse order-2" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lesson.html"><i class="fab fa-hackerrank"></i> Lesson</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usermanage.html"><i class="fab fa-hackerrank"></i> User Manager</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse order-2 collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <style>
+                    .dropdown-item:hover {
+                        background-color: slategray;
+                    }
+                    
+                    .dropdown-item:active {
+                        background-color: slategray;
+                    }
+                </style>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i> Profile
+                        </a>
+                        <ul class="dropdown-menu bg-dark text-light" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-light" href="profile.html"><i class="fas fa-id-badge"></i> Infomation</a></li>
+                            <li><a class="dropdown-item text-light" href="profileuser.html"><i class="fas fa-user-edit"></i> Manage User</a></li>
+                            <li><a class="dropdown-item text-light" href="profilepassword.html"><i class="fas fa-key"></i> Change password</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-light" href="#"><i class="fas fa-sign-out-alt"></i> Sign out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+    <div class="container">
+        <div class="mt-3">
+            <div class="">
+                <div class="container mt-3">
+                    <div class="text-center text-light">
+                        <h2>ข้อมูลผู้ใช้</h2>
+                        <center>
+                            <hr style="width: 150px; height: 2px; margin-top: 5px;">
+                        </center>
+                    </div>
+                    <div class="row justify-content-lg-center text-light">
+                        <div class="col-lg-6">
+                            <div class="text-center">
+                                <input class="form-control mt-3 bg-dark text-white" placeholder="Username or Email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-primary">ค้นหา</button>
+                    </div>
+                    <div class="mt-3 text-light">
+                        <hr>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="card bg-dark">
+                                    <div class="card-body">
+                                        <div class="mt-3">
+                                            <label>ชื่อผู้ใช้</label>
+                                            <input class="form-control bg-dark text-white" value="Name" disabled>
+                                        </div>
+                                        <div class="mt-3">
+                                            <label>อีเมล</label>
+                                            <input class="form-control bg-dark text-white" value="email@email.com" disabled>
+                                        </div>
+                                        <div class="mt-3">
+                                            <label>เข้าใช้งานเมื่อวันที่</label>
+                                            <input class="form-control bg-dark text-white" value="15/12/2021" disabled>
+                                        </div>
+                                        <div class="mt-3">
+                                            <label>SQL Point</label>
+                                            <input class="form-control bg-dark text-white" value="80" disabled>
+                                        </div>
+                                        <div class="mt-3">
+                                            <label>XSS Point</label>
+                                            <input class="form-control bg-dark text-white" value="100" disabled>
+                                        </div>
+                                        <div class="mt-3">
+                                            <label>SQL Rank</label>
+                                            <input class="form-control bg-dark text-white" value="80" disabled>
+                                        </div>
+                                        <div class="mt-3">
+                                            <label>XSS Rank</label>
+                                            <input class="form-control bg-dark text-white" value="100" disabled>
+                                        </div>
+                                        <div></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
