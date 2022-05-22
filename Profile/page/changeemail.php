@@ -17,12 +17,12 @@
 
                 <div class="col-lg-5 mt-3">
                     <span
-                        style="font-size: 24px; padding-left: 30px;"><?php echo account()->getUser()['username']; ?></span>
+                        style="font-size: 24px; padding-left: 30px;"><?php echo clean(account()->getUser()['username']); ?></span>
 
                 </div>
                 <div class="col-lg-4 text-end mt-3">
-                    <button class="btn-custom-border" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal2" style="width: 150px;">แก้ไขชื่อผู้ใช้</button>
+                    <a href="?page=infomation"><button class="btn-custom-border" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal2"  style="width: 150px;">แก้ไขชื่อผู้ใช้</button></a>
 
                 </div>
 
