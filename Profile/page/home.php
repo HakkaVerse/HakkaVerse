@@ -37,7 +37,7 @@
                                             อีเมล
                                         </div>
                                         <div class="mt-3">
-                                            <span style="color: #C4C4C4;"><?php echo account()->getUser()['email']; ?></span>
+                                            <span style="color: #C4C4C4;"><?php echo clean(account()->getUser()['email']); ?></span>
                                         </div>
                                         <div class="mt-3">
                                             รหัสผ่าน
