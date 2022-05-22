@@ -311,7 +311,22 @@ font-size: 20px; letter-spacing: 1px; text-shadow: none;" class="btn btn-custom 
             <div class="custom-card mt-3">
                 <div class="row mt-3">
                     <div class="col-lg-3">
-                        <img src="../public/img/rank/Ellipse_3.svg" width="100%">
+                        <?php
+                                $point = account()->getPoint(2, $_SESSION['username']);
+                                $rank = query("SELECT * FROM setting_rank WHERE id = ?", [1])->fetch();
+                                if($point >= $rank['silver'] and $point < $rank['gold'] and $point < $rank['hacker']){
+                                    echo '<img src="../public/img/rank/Ellipse_3.svg" width="100%">';
+
+                                }elseif($point >= $rank['gold'] and $point > $rank['silver'] and $point < $rank['hacker']){
+                                    echo '<img src="../public/img/rank/Ellipse_2.svg" width="100%">';
+
+                                }elseif($point >= $rank['hacker'] and $point > $rank['silver'] and $point > $rank['gold']){
+                                    echo '<img src="../public/img/rank/Ellipse_1.svg" width="100%">';
+
+                                }else{
+                                    echo '<img src="../public/img/rank/Ellipse_3.svg" width="100%">';
+                                }
+                                ?>
                     </div>
                     <div style="width: 50px;"></div>
                     <div class="col-lg-8">
@@ -355,7 +370,22 @@ font-size: 20px; letter-spacing: 1px; text-shadow: none;" class="btn btn-custom 
             <div class="custom-card mt-5">
                 <div class="row mt-3">
                     <div class="col-lg-3">
-                        <img src="../public/img/rank/Ellipse_2.svg" width="100%">
+                        <?php
+                                $point = account()->getPoint(1, $_SESSION['username']);
+                                $rank = query("SELECT * FROM setting_rank WHERE id = ?", [1])->fetch();
+                                if($point >= $rank['silver'] and $point < $rank['gold'] and $point < $rank['hacker']){
+                                    echo '<img src="../public/img/rank/Ellipse_3.svg" width="100%">';
+
+                                }elseif($point >= $rank['gold'] and $point > $rank['silver'] and $point < $rank['hacker']){
+                                    echo '<img src="../public/img/rank/Ellipse_2.svg" width="100%">';
+
+                                }elseif($point >= $rank['hacker'] and $point > $rank['silver'] and $point > $rank['gold']){
+                                    echo '<img src="../public/img/rank/Ellipse_1.svg" width="100%">';
+
+                                }else{
+                                    echo '<img src="../public/img/rank/Ellipse_3.svg" width="100%">';
+                                }
+                                ?>
                     </div>
                     <div style="width: 50px;"></div>
                     <div class="col-lg-8">
@@ -399,7 +429,22 @@ font-size: 20px; letter-spacing: 1px; text-shadow: none;" class="btn btn-custom 
             <div class="custom-card mt-5">
                 <div class="row mt-3">
                     <div class="col-lg-3">
-                        <img src="../public/img/rank/Ellipse_1.svg" width="100%">
+                        <?php
+                                $point = account()->getPoint(3, $_SESSION['username']);
+                                $rank = query("SELECT * FROM setting_rank WHERE id = ?", [1])->fetch();
+                                if($point >= $rank['silver'] and $point < $rank['gold'] and $point < $rank['hacker']){
+                                    echo '<img src="../public/img/rank/Ellipse_3.svg" width="100%">';
+
+                                }elseif($point >= $rank['gold'] and $point > $rank['silver'] and $point < $rank['hacker']){
+                                    echo '<img src="../public/img/rank/Ellipse_2.svg" width="100%">';
+
+                                }elseif($point >= $rank['hacker'] and $point > $rank['silver'] and $point > $rank['gold']){
+                                    echo '<img src="../public/img/rank/Ellipse_1.svg" width="100%">';
+
+                                }else{
+                                    echo '<img src="../public/img/rank/Ellipse_3.svg" width="100%">';
+                                }
+                                ?>
                     </div>
                     <div style="width: 50px;"></div>
                     <div class="col-lg-8">
