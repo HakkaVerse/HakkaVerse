@@ -19,7 +19,7 @@
                             </div>
 
                             <div class="col-lg-5 mt-3">
-                                <span style="font-size: 24px; padding-left: 30px;"><?php echo account()->getUser()['username']; ?></span>
+                                <span style="font-size: 24px; padding-left: 30px;"><?php echo clean(account()->getUser()['username']); ?></span>
 
                             </div>
                             <div class="col-lg-4 text-end mt-3">
@@ -103,7 +103,7 @@
 
                     <div class="mt-4">
                         <label>เปลี่ยนชื่อผู้ใช้</label><br>
-                        <input autocomplete="off" name="username" required class="input2 w-75" value="<?php echo account()->getUser()['username']; ?>" placeholder="ชื่อผู้ใช้">
+                        <input autocomplete="off" name="username" required class="input2 w-75" value="<?php echo clean(account()->getUser()['username']); ?>" placeholder="ชื่อผู้ใช้">
                     </div>
                     <button type="submit" class="mt-5 btn btn-gradient-login w-50">SAVE</button>
 
