@@ -15,10 +15,12 @@ class Account{
             if(count(query("SELECT * FROM user WHERE username=?", [$user])->fetchAll()) == 1){
                 $u = query("SELECT * FROM user WHERE username=?", [$user])->fetch();
                 if($u['password'] == $pass){
+                    $_SESSION['id'] = $u['id'];
                     $_SESSION['username'] = $u['username'];
                     $_SESSION['date'] = $u['date'];
                     $_SESSION['email'] = $u['email'];
                     $_SESSION['status'] = $u['group'];
+                    $_SESSION['nickname'] = $u['nickname'];
                     return true;
                 }else{
                     return false;
@@ -26,10 +28,25 @@ class Account{
             }elseif(count(query("SELECT * FROM user WHERE email=?", [$user])->fetchAll()) == 1){
                 $u = query("SELECT * FROM user WHERE email=?", [$user])->fetch();
                 if($u['password'] == $pass){
+                    $_SESSION['id'] = $u['id'];
                     $_SESSION['username'] = $u['username'];
                     $_SESSION['date'] = $u['date'];
                     $_SESSION['email'] = $u['email'];
                     $_SESSION['status'] = $u['group'];
+                    $_SESSION['nickname'] = $u['nickname'];
+                    return true;
+                }else{
+                    return false;
+                }
+            }elseif(count(query("SELECT * FROM user WHERE nickname=?", [$user])->fetchAll()) == 1){
+                $u = query("SELECT * FROM user WHERE nickname=?", [$user])->fetch();
+                if($u['password'] == $pass){
+                    $_SESSION['id'] = $u['id'];
+                    $_SESSION['username'] = $u['username'];
+                    $_SESSION['date'] = $u['date'];
+                    $_SESSION['email'] = $u['email'];
+                    $_SESSION['status'] = $u['group'];
+                    $_SESSION['nickname'] = $u['nickname'];
                     return true;
                 }else{
                     return false;
@@ -51,7 +68,7 @@ class Account{
         }elseif(count(query("SELECT * FROM user WHERE username=?", [$username])->fetchAll()) > 0){
             $_SESSION['register_error_username'] = true;
             return false;
-        }elseif(query("INSERT INTO user (`username`, `password`, `email`, `date`, `profile`, `group`, `point`, `skill_1`, `skill_2`, `skill_3`, `skill_4`, `skill_5`, `skill_6`, `skill_7`, `skill_8`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [$username, $this->hashPassword($password), $email, now_time(time()), "profile.png", "member", "0","0","0","0","0","0","0","0","0"])){
+        }elseif(query("INSERT INTO user (`username`, `password`, `email`, `date`, `profile`, `group`, `point`, `skill_1`, `skill_2`, `skill_3`, `skill_4`, `skill_5`, `skill_6`, `skill_7`, `skill_8`, `nickname`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [$username, $this->hashPassword($password), $email, now_time(time()), "profile.png", "member", "0","0","0","0","0","0","0","0","0",$username])){
             $_SESSION['register_success'] = true;
             $this->Login($username, $this->hashPassword($password));
             return true;
@@ -112,6 +129,16 @@ class Account{
         return $u;
     }
 
+    public function getNickName(){
+        $user = $_SESSION['username'];
+        $u = query("SELECT * FROM user WHERE username=?", [$user])->fetch();
+        if($_SESSION['nickname'] == ""){
+            return clean($u['username']);
+        }else{
+            return clean($u['nickname']);
+        }
+    }
+
     public function getAllPoint($username){
         $h = query("SELECT * FROM test_history WHERE username = ?", [$username])->fetchAll();
         $i = 0;
@@ -154,17 +181,21 @@ class Account{
             $user = $_SESSION['username'];
             if(count(query("SELECT * FROM user WHERE username=?", [$user])->fetchAll()) == 1){
                 $u = query("SELECT * FROM user WHERE username=?", [$user])->fetch();
+                $_SESSION['id'] = $u['id'];
                 $_SESSION['username'] = $u['username'];
                 $_SESSION['date'] = $u['date'];
                 $_SESSION['email'] = $u['email'];
                 $_SESSION['status'] = $u['group'];
+                $_SESSION['nickname'] = $u['nickname'];
                 $_SESSION['profile'] = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME']."/upload/".$u['profile'];
             }else{
+                unset($_SESSION['id']);
                 unset($_SESSION['username']);
                 unset($_SESSION['date']);
                 unset($_SESSION['email']);
                 unset($_SESSION['status']);
                 unset($_SESSION['profile']);
+                unset($_SESSION['nickname']);
             }
         }
     }
