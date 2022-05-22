@@ -21,8 +21,8 @@
 
                 </div>
                 <div class="col-lg-4 text-end mt-3">
-                    <button class="btn-custom-border" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal2"  style="width: 150px;">แก้ไขชื่อผู้ใช้</button>
+                    <a href="?page=infomation"><button class="btn-custom-border" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal2"  style="width: 150px;">แก้ไขชื่อผู้ใช้</button></a>
 
                 </div>
 
