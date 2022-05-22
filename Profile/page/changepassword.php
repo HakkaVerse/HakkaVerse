@@ -17,7 +17,7 @@
 
                 <div class="col-lg-5 mt-3">
                     <span
-                        style="font-size: 24px; padding-left: 30px;"><?php echo account()->getUser()['username']; ?></span>
+                        style="font-size: 24px; padding-left: 30px;"><?php echo clean(account()->getUser()['username']); ?></span>
 
                 </div>
                 <div class="col-lg-4 text-end mt-3">
