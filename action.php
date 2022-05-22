@@ -11,8 +11,8 @@ if($_POST){
             return true;
         }
         if($_FILES['upload']['name'] == ""){
-            query("UPDATE user SET username=? WHERE email=?", [$username, $_SESSION['email']]);
-            $_SESSION['username'] = $username;
+            query("UPDATE user SET nickname=? WHERE id=?", [$username, $_SESSION['id']]);
+            $_SESSION['nickname'] = $username;
             header("Location: /Profile");
             return true;
         }
@@ -21,21 +21,23 @@ if($_POST){
         $tmp_name =  $_FILES['upload']['tmp_name'];
         $locate_img = "upload/";
         move_uploaded_file($tmp_name,$locate_img.$imgname);
-        query("UPDATE user SET profile=?, username=? WHERE email=?", [$imgname, $username, $_SESSION['email']]);
-        $_SESSION['username'] = $username;
+        query("UPDATE user SET profile=?, nickname=? WHERE id=?", [$imgname, $username, $_SESSION['id']]);
+        $_SESSION['nickname'] = $username;
         header("Location: /Profile");
         return true;
     }
     if(isset($_POST['testing'])){
-        $answer = $_POST['answer'];
-        if($_POST['answer'] == ""){
-            $answer = "5";
-        }else{
-            $answer = $_POST['answer'];
-        }
         $lesson_id = $_POST['lesson_id'];
         $test_id = $_POST['test_id'];
         $article=$_POST['article'];
+        $answer = $_POST['answer'];
+        if($_POST['answer'] == ""){
+            header("Location: Lesson/Test/?testing=$lesson_id&answer=$article");
+
+            return true;
+        }else{
+            $answer = $_POST['answer'];
+        }
         $test = query("SELECT * FROM test WHERE id = ?", [$test_id])->fetch();
         $test_history = query("SELECT * FROM test_history WHERE username=? AND answer=? AND lesson_id=?", [$_SESSION['username'], $_POST['article'], $lesson_id]);
         //die(print_r($test_history->fetchAll()));
@@ -244,6 +246,7 @@ if($_POST){
         unset($_SESSION['username']);
         unset($_SESSION['date']);
         unset($_SESSION['email']);
+        unset($_SESSION['id']);
         $_SESSION['logout'] = true;
         header("Location: /");
     }else{
