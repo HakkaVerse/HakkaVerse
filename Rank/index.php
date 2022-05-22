@@ -280,7 +280,7 @@ if(!isset($_SESSION['username'])){
                     </div>
                     <div>
                         <a style="width: 95%;"
-                            class="btn btn-custom btn-glow mt-2"><?php echo $_SESSION['username'] ?></a>
+                            class="btn btn-custom btn-glow mt-2"><?php echo clean($_SESSION['username']); ?></a>
                     </div>
                     <div class="mt-2"></div>
                 </div>
@@ -294,7 +294,7 @@ if(!isset($_SESSION['username'])){
                             border: 3px solid #FFFFFF;
                             border-radius: 19px;" src="<?php echo $_SESSION['profile']; ?>">
                 <a style="width: 295px; position: relative; bottom: 75px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);font-weight: 900;
-font-size: 20px; letter-spacing: 1px; text-shadow: none;" class="btn btn-custom mt-2"><?php echo $_SESSION['username'] ?></a>
+font-size: 20px; letter-spacing: 1px; text-shadow: none;" class="btn btn-custom mt-2"><?php echo clean($_SESSION['username']); ?></a>
 
             </div>
 
