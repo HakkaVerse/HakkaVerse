@@ -311,7 +311,7 @@ font-size: 20px; letter-spacing: 1px; text-shadow: none;" class="btn btn-custom 
             <div class="custom-card mt-3">
                 <div class="row mt-3">
                     <div class="col-lg-3">
-                        <img src="../public/img/rank/5.png" width="100%">
+                        <img src="../public/img/rank/Ellipse_1.svg" width="100%">
                     </div>
                     <div style="width: 50px;"></div>
                     <div class="col-lg-8">
@@ -355,7 +355,7 @@ font-size: 20px; letter-spacing: 1px; text-shadow: none;" class="btn btn-custom 
             <div class="custom-card mt-5">
                 <div class="row mt-3">
                     <div class="col-lg-3">
-                        <img src="../public/img/rank/6.png" width="100%">
+                        <img src="../public/img/rank/Ellipse_2.svg" width="100%">
                     </div>
                     <div style="width: 50px;"></div>
                     <div class="col-lg-8">
@@ -399,7 +399,7 @@ font-size: 20px; letter-spacing: 1px; text-shadow: none;" class="btn btn-custom 
             <div class="custom-card mt-5">
                 <div class="row mt-3">
                     <div class="col-lg-3">
-                        <img src="../public/img/rank/7.png" width="100%">
+                        <img src="../public/img/rank/Ellipse_3.svg" width="100%">
                     </div>
                     <div style="width: 50px;"></div>
                     <div class="col-lg-8">
