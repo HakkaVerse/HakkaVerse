@@ -1,3 +1,11 @@
+
+<?php
+require_once("../../../../_system/system.php");
+
+if(!isset($_SESSION['sec_2'])){
+    header("Location: ../2");
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -22,14 +30,14 @@
 
     <!-- Jquery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js?v=3"></script>
+
+
+    <script src="script.js?v=2"></script>
 </head>
 
 <body>
+    
     <style>
-        p{
-            font-size: 20px;
-        }
         
         .nextLevel {
             background: #1565C0;
@@ -65,11 +73,14 @@
             background: #1565C0;
             color: white;
         }
+        .btn{
+            border-radius: 15px;
+        }
     </style>
     <img class="imagebanner" src="img/banner.jpg">
     <div class="imgshadow"></div>
     <div class="level-border"></div>
-    <div class="level-text">1</div>
+    <div class="level-text">3</div>
     <span class="texthead">HakkaBook</span>
     <div class="container mt-5">
         <div class="custom-card">
@@ -78,35 +89,60 @@
                     คำแนะนำ
                 </div>
                 <div class="description mt-4">
-                    <b>สวัสดีครับทุกท่าน !</b> คุณคือ <b>Hacker</b> ผู้มีจริยธรรมและถูกเลือกโดยเรา ! ถึงเวลาแล้วที่เราจะให้โอกาสคุณทดสอบและ
-                    ตรวจสอบช่องโหว่ของระบบรักษาความปลอดภัยเว็บไซต์จำลอง <b>HakkaFace</b> ได้เวลาสร้างตัวตนของคุณและทดสอบ
-                    ความสามารถคุณในแลปทดลองของเราแล้วครับ
+                    <div id="text1">
+                        <p>เป็นเรื่องที่ปกติในการโจมตีรหัสผ่านของเป้าหมายเพื่อ <b>Reset</b> ระบบปฎิบัติการ ตรวจค้นปัญหาที่เกิดขึ้นกับ <b>User</b></p>
+                        <p>กด <b>Username Hakka</b> และกด <b>Reset Password</b></p>
+                    </div>
+                    <div id="text2" class="hide">
+                        <p>การรีเซ็ตบัญชีส่วนใหญ่ตัวของระบบปฎิบัติการมักจะใช้การส่ง <b>Code</b> ผ่าน <b>E-mail</b> เพื่อยืนยันตัวตนของผู้ใช้งาน</p>
+                        <p><b>Hakka</b> จะได้รับรหัสผ่าน <b>4</b> ตัว เพื่อยืนยันตัวตน ผมเลยสงสัยว่าเราจะเดารหัสของเขาได้ไหม ?</p>
+
+                    </div>
                 </div>
 
                 <div class="mt-5">
                     <div class="webhead">
                         <i style="padding-left: 30px;padding-right: 24px;" class="fa-solid fa-arrow-left headicon"></i> 
                         <i style="padding-right: 24px;" class="fa-solid fa-arrow-right headicon"></i> 
-                        <i style="padding-right: 24px;" class="fa-solid fa-arrow-rotate-right headicon"></i>
+                        <a href=""><i style="padding-right: 24px;" class="fa-solid fa-arrow-rotate-right headicon"></i></a>
                         <div class="urlweb">
                             <i class="fa-solid fa-lock"></i>
-                            <span style="padding-left: 10px;">hakkabook.com</span>
+                            <span style="padding-left: 10px;">hakkabook.com/forgot-password</span>
                         </div>
                     </div>
                     <div class="webcontent mt-4">
-                        <center><br><br>
-                            <span style="color: #F0A500; font-size: 70px; font-weight: 900;">HakkaBook</span><br>
-                            <span style="font-size: 25px; font-weight: 900;">A social media that helps you connect with friends</span></center>
+                        <center><br>
+                            <span style="color: #F0A500; font-size: 70px; font-weight: 900;">HakkaBook</span><br><br>
+                            <h4>รีเซ็ตรหัสผ่านของคุณ</h4>
+                            <div id="form_send" class="mt-5 hide">
+                                <button class="btn" style="background: #F0A500; padding: 12px; width: 200px; font-size: 20px; border-radius: 20px;"><span class="text-shadow text-white">รหัสถูกส่งแล้ว</span></button>
+                            </div>
+                            <div id="form">
+                                <div class="row mt-5 justify-content-center" >
+                                    <div class="col-lg-4">
+                                        <input placeholder="ใส่ชื่อของคุณ...." id="name" autocomplete="off" class="form-control bg-dark border-2 border-secondary text-white rounded rounded-3">
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <button class="btn btn-secondary" id="resetpassword">รีเซ็ตรหัสผ่าน</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="mt-5">
+                                <h5>คุณจะได้รับรหัสผ่าน <b>4</b> หลักในการยืนยันตัวตน</h5>
+                            </div>
+                            <br><br><br><br><br><br>
+                        </center>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row mt-3">
             <div class="col-lg-6">
-                <a href="../0/" class="btn nextLevel"  style="font-size: 20px;"><i style="padding-right: 5px;" class="fa-solid fa-circle-arrow-left"></i> LEVEL 0</a>
+                <a href="../2/" class="btn nextLevel" style="font-size: 20px;"><i style="padding-right: 5px;" class="fa-solid fa-circle-arrow-left"></i> LEVEL 2</a>
             </div>
             <div class="col-lg-6 text-end">
-                <a href="../2/" class="btn nextLevel"  style="font-size: 20px;">LEVEL 2 <i style="padding-left: 5px;" class="fa-solid fa-circle-arrow-right"></i></a>
+                <a href="../4/" id="nextlevel" class="btn disabled nextLevel" style="font-size: 20px;">LEVEL 4 <i style="padding-left: 5px;" class="fa-solid fa-circle-arrow-right"></i></a>
             </div>
         </div>
     </div>

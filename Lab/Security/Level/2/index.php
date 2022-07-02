@@ -1,3 +1,11 @@
+
+<?php
+require_once("../../../../_system/system.php");
+
+if(!isset($_SESSION['sec_1'])){
+    header("Location: ../1");
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -26,10 +34,8 @@
 </head>
 
 <body>
+    
     <style>
-        p{
-            font-size: 20px;
-        }
         
         .nextLevel {
             background: #1565C0;
@@ -69,7 +75,7 @@
     <img class="imagebanner" src="img/banner.jpg">
     <div class="imgshadow"></div>
     <div class="level-border"></div>
-    <div class="level-text">1</div>
+    <div class="level-text">2</div>
     <span class="texthead">HakkaBook</span>
     <div class="container mt-5">
         <div class="custom-card">
@@ -78,35 +84,40 @@
                     คำแนะนำ
                 </div>
                 <div class="description mt-4">
-                    <b>สวัสดีครับทุกท่าน !</b> คุณคือ <b>Hacker</b> ผู้มีจริยธรรมและถูกเลือกโดยเรา ! ถึงเวลาแล้วที่เราจะให้โอกาสคุณทดสอบและ
-                    ตรวจสอบช่องโหว่ของระบบรักษาความปลอดภัยเว็บไซต์จำลอง <b>HakkaFace</b> ได้เวลาสร้างตัวตนของคุณและทดสอบ
-                    ความสามารถคุณในแลปทดลองของเราแล้วครับ
+                    <b>HakkaFace</b> เปิดโอกาสให้คุณใช้โปรไฟล์สาธารณะได้ ถ้าคุณสังเกต <b>URL</b> จะปรากฏให้เห็น <b>Username</b> ของบุคคลนี้
+                    เริ่ม <b>Copy</b> สิ่งนี้และดูต่อไปว่าจะรีเซ็ตรหัสผ่านของ <b>Hakka</b> ได้อย่างไร ?
                 </div>
 
                 <div class="mt-5">
                     <div class="webhead">
-                        <i style="padding-left: 30px;padding-right: 24px;" class="fa-solid fa-arrow-left headicon"></i> 
-                        <i style="padding-right: 24px;" class="fa-solid fa-arrow-right headicon"></i> 
+                        <i style="padding-left: 30px;padding-right: 24px;" class="fa-solid fa-arrow-left headicon"></i>
+                        <i style="padding-right: 24px;" class="fa-solid fa-arrow-right headicon"></i>
                         <i style="padding-right: 24px;" class="fa-solid fa-arrow-rotate-right headicon"></i>
                         <div class="urlweb">
                             <i class="fa-solid fa-lock"></i>
-                            <span style="padding-left: 10px;">hakkabook.com</span>
+                            <span style="padding-left: 10px;">hakkabook.com/Hakka.Lab</span>
                         </div>
                     </div>
                     <div class="webcontent mt-4">
-                        <center><br><br>
-                            <span style="color: #F0A500; font-size: 70px; font-weight: 900;">HakkaBook</span><br>
-                            <span style="font-size: 25px; font-weight: 900;">A social media that helps you connect with friends</span></center>
+                        <img width="100%" src="img/Subtract.png">
+                        <img src="img/icon.png" class="icon">
+                        <span class="name">Hakka Lab</span>
+                        <span class="profile_description">สวัสดีผมชื่อ Hakka งานอดิเรกของผมคือการ ออกแบบเว็บไซต์,
+                            อ่านหนังสือ</span>
+                        <span class="user_friend"><i class="fa-solid fa-user-group text-white"
+                                style="padding-right: 18px; font-size: 26px;"></i> 500 Friend</span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row mt-3">
             <div class="col-lg-6">
-                <a href="../0/" class="btn nextLevel"  style="font-size: 20px;"><i style="padding-right: 5px;" class="fa-solid fa-circle-arrow-left"></i> LEVEL 0</a>
+                <a href="../1/" class="btn nextLevel"  style="font-size: 20px;"><i style="padding-right: 5px;" class="fa-solid fa-circle-arrow-left"></i>
+                    LEVEL 1</a>
             </div>
             <div class="col-lg-6 text-end">
-                <a href="../2/" class="btn nextLevel"  style="font-size: 20px;">LEVEL 2 <i style="padding-left: 5px;" class="fa-solid fa-circle-arrow-right"></i></a>
+                <a href="../3/" class="btn nextLevel"  style="font-size: 20px;">LEVEL 3 <i style="padding-left: 5px;"
+                        class="fa-solid fa-circle-arrow-right"></i></a>
             </div>
         </div>
     </div>

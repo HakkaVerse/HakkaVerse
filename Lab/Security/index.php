@@ -150,7 +150,7 @@
     Ex.
     href="Download/file.pdf"
     -->
-    <a href="Download/1.pdf" download>
+    <a href="Download/CYBER SECURITY REPORT.pdf" download>
         <div class="b1"></div>
         <span class="btext1">ดาวน์โหลด</span>
         <img class="bicon1" src="img/download.svg">
@@ -167,7 +167,7 @@
     Ex.
     href="Download/file.pdf"
     -->
-    <a href="Download/2.pdf" download>
+    <a href="Download/รวบรวมคำศัพท์น่ารู้ด้าน Security.pdf" download>
         <div class="b2"></div>
         <span class="btext2">ดาวน์โหลด</span>
         <img class="bicon2" src="img/download.svg">

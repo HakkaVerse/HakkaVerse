@@ -1,11 +1,18 @@
 $(document).ready(function(){
+    
+  $.post("../../../setting.php", {check: "check"},function(data){
+    if(data == "true"){
+      location.href = "../../";
+      return true;
+    }
+  });
     var answer1 = $("#answer1");
     var answer2 = $("#answer2");
     var answerbutton1 = $("#answerbutton1");
     var answerbutton2 = $("#answerbutton2");
 
-    answer1.val(getCookie("answer1"));
-    answer2.val(getCookie("answer2"));
+    /*answer1.val(getCookie("answer1"));
+    answer2.val(getCookie("answer2"));*/
 
     answerbutton1.click(function(){
         // คำตอบ
@@ -15,6 +22,9 @@ $(document).ready(function(){
             answer1.addClass("text-center");
             answer1.addClass("disabled");
             answer1.val("คำตอบถูกต้อง !!!");
+            $.post("../../../setting.php", {sec_question: "lv1", answer: "hakka.lab"},function(data){
+                console.log(data);
+              });
             setTimeout(function(){
                 answer1.removeClass("border-success");
                 answer1.removeClass("text-center");
@@ -38,6 +48,9 @@ $(document).ready(function(){
             answer2.addClass("text-center");
             answer2.addClass("disabled");
             answer2.val("คำตอบถูกต้อง !!!");
+            $.post("../../../setting.php", {sec_question: "lv2", answer: "HKA{BRUTEFORCING}"},function(data){
+                console.log(data);
+              });
             setTimeout(function(){
                 answer2.removeClass("border-success");
                 answer2.removeClass("text-center");

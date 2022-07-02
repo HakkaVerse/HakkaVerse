@@ -1,4 +1,10 @@
 $(document).ready(function(){
+    $.post("../../../setting.php", {check_security: "lv2"},function(data){
+      if(data == "true"){
+        location.href = "../2";
+        return true;
+      }
+    });
     var form = $("#form");
     var form_send = $("#form_send");
     var name = $("#name");

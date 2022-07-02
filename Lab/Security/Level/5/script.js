@@ -1,6 +1,12 @@
 
 
 $(document).ready(function () {
+  $.post("../../../setting.php", {check_security: "lv4"},function(data){
+    if(data == "true"){
+      location.href = "../4";
+      return true;
+    }
+  });
   var code = getCookie("code");
   var form = $("#form");
   var form_send = $("#form_send");
@@ -22,8 +28,8 @@ $(document).ready(function () {
   buttom.click(function () {
     if (input.val() && $.isNumeric(input.val())) {
       /** Command */
-      text1.addClass("hide");
-      text2.removeClass("hide");
+      //text1.addClass("hide");
+      //text2.removeClass("hide");
       web_request.removeClass("hide");
       form_send.removeClass("hide");
       textunderinput.html("<h5><b style='color:#EB8145; '>Code " + input.val() + "</b> ไม่ถูกต้อง !!</h5>")

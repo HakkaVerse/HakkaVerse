@@ -1,3 +1,11 @@
+
+<?php
+require_once("../../../../_system/system.php");
+
+if(!isset($_SESSION['sec_5'])){
+    header("Location: ../5");
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -26,10 +34,8 @@
 </head>
 
 <body>
+    
     <style>
-        p{
-            font-size: 20px;
-        }
         
         .nextLevel {
             background: #1565C0;
@@ -69,18 +75,22 @@
     <img class="imagebanner" src="img/banner.jpg">
     <div class="imgshadow"></div>
     <div class="level-border"></div>
-    <div class="level-text">1</div>
+    <div class="level-text">6</div>
     <span class="texthead">HakkaBook</span>
     <div class="container mt-5">
         <div class="custom-card">
             <div style="padding: 50px;">
-                <div class="advice">
+                <div class="title">
                     คำแนะนำ
                 </div>
                 <div class="description mt-4">
-                    <b>สวัสดีครับทุกท่าน !</b> คุณคือ <b>Hacker</b> ผู้มีจริยธรรมและถูกเลือกโดยเรา ! ถึงเวลาแล้วที่เราจะให้โอกาสคุณทดสอบและ
-                    ตรวจสอบช่องโหว่ของระบบรักษาความปลอดภัยเว็บไซต์จำลอง <b>HakkaFace</b> ได้เวลาสร้างตัวตนของคุณและทดสอบ
-                    ความสามารถคุณในแลปทดลองของเราแล้วครับ
+                    <div id="text1">
+                        <p>นี้คือการโจมตีที่ใช้ได้จริงในชีวิตประจำวัน มันถึงขั้นที่ทำการ  <b>take over Instagram</b> ได้เลยนะครับ ถ้ากลุ่ม <b>Hacker</b> 
+                            สามารถตรวจสอบจุดนี้แล้วแจ้งไป <b>Instagram</b> พวกเขาจะได้รับค่าตอบแทนเป็นเงิน <b>10,000</b> ดอลลาร์สหรัฐโดยประมาณ</p>
+                            <p>นี้เป็นสิ่งสำคัญที่ทุกคนจะต้องทำความเข้าใจเกี่ยวกับวิธีการตรวจสอบเว็บไซต์ เพื่อที่ทุกคนจะได้เข้าใจในระบบมากขึ้น 
+                                เราจะช่วยสอนทุกท่าน เกี่ยวกับการโจมตีทางไซเบอร์มากขึ้น รวมไปถึงเครื่องมือที่ใช้เพื่อการตรวจสอบระบบ
+                                รักษาความปลอดภัยในชีวิตประจำวัน</p>
+                    </div>
                 </div>
 
                 <div class="mt-5">
@@ -90,28 +100,29 @@
                         <i style="padding-right: 24px;" class="fa-solid fa-arrow-rotate-right headicon"></i>
                         <div class="urlweb">
                             <i class="fa-solid fa-lock"></i>
-                            <span style="padding-left: 10px;">hakkabook.com</span>
+                            <span style="padding-left: 10px;">hakkabook.com/forgot-password</span>
                         </div>
                     </div>
-                    <div class="webcontent mt-4">
-                        <center><br><br>
-                            <span style="color: #F0A500; font-size: 70px; font-weight: 900;">HakkaBook</span><br>
-                            <span style="font-size: 25px; font-weight: 900;">A social media that helps you connect with friends</span></center>
+                    <div class="webcontent mt-4 text-center">
+                        <h1 class="mt-5" style="color: #F0A500; font-size: 60px; font-weight: 900;">HakkaBook</h1>
+                        <h4 class="mt-4">คุณรีเซ็ตรหัสผ่านสำเร็จแล้ว</h4>
+                        <div class="mt-4">
+                            <center><input disabled id="input" value="" style="width: 18rem;" class="form-control text-center form-control-lg bg-dark text-white border-secondary"></center>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="../../Level/0/" class="btn btn-warning btn-lg">กลับหน้าหลัก</a>
+                        </div>
+                        <div class="mt-5"></div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row mt-3">
             <div class="col-lg-6">
-                <a href="../0/" class="btn nextLevel"  style="font-size: 20px;"><i style="padding-right: 5px;" class="fa-solid fa-circle-arrow-left"></i> LEVEL 0</a>
-            </div>
-            <div class="col-lg-6 text-end">
-                <a href="../2/" class="btn nextLevel"  style="font-size: 20px;">LEVEL 2 <i style="padding-left: 5px;" class="fa-solid fa-circle-arrow-right"></i></a>
+                <a href="../5/" class="btn nextLevel" style="font-size: 20px;"><i style="padding-right: 5px;" class="fa-solid fa-circle-arrow-left"></i> LEVEL 5</a>
             </div>
         </div>
     </div>
-
-
     <div class="mt-5">
 
     </div>
