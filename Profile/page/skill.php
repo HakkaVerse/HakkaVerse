@@ -66,7 +66,7 @@
             $skill_7 = number_format($user['skill_7'], 2, ".", "");
         }
         $skill_8 = 0;
-        if($user['skill_7'] > 100){
+        if($user['skill_8'] > 100){
             $skill_8 = 100;
         }else{
             $skill_8 = number_format($user['skill_8'], 2, ".", "");

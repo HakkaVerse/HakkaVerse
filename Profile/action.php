@@ -6,6 +6,11 @@ if($_POST){
     if(isset($_POST['email'])){
         $email = $_POST['email'];
         $password = account()->hashPassword($_POST['password']);
+        if(query("SELECT * FROM user WHERE email=?", [$email])->rowCount() > 0 && $email != account()->getUser()['email']){
+            $_SESSION['register_error_email'] = true;
+            header("Location: /Profile");
+            return true;
+        }
         if($password == account()->getUser()['password']){
             query("UPDATE user SET email=? WHERE username=?", [$email, $_SESSION['username']]);
             $_SESSION['email'] = $email;

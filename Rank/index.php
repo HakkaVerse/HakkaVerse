@@ -315,16 +315,16 @@ font-size: 20px; letter-spacing: 1px; text-shadow: none;" class="btn btn-custom 
                                 $point = account()->getPoint(2, $_SESSION['username']);
                                 $rank = query("SELECT * FROM setting_rank WHERE id = ?", [1])->fetch();
                                 if($point >= $rank['silver'] and $point < $rank['gold'] and $point < $rank['hacker']){
-                                    echo '<img src="../public/img/rank/Ellipse_3.svg" width="100%">';
+                                    echo '<img src="../public/img/rank/Ellipse_3.png" width="100%">';
 
                                 }elseif($point >= $rank['gold'] and $point > $rank['silver'] and $point < $rank['hacker']){
-                                    echo '<img src="../public/img/rank/Ellipse_2.svg" width="100%">';
+                                    echo '<img src="../public/img/rank/Ellipse_2.png" width="100%">';
 
                                 }elseif($point >= $rank['hacker'] and $point > $rank['silver'] and $point > $rank['gold']){
-                                    echo '<img src="../public/img/rank/Ellipse_1.svg" width="100%">';
+                                    echo '<img src="../public/img/rank/Ellipse_1.png" width="100%">';
 
                                 }else{
-                                    echo '<img src="../public/img/rank/Ellipse_3.svg" width="100%">';
+                                    echo '<img src="../public/img/rank/Ellipse_3.png" width="100%">';
                                 }
                                 ?>
                     </div>
@@ -374,16 +374,16 @@ font-size: 20px; letter-spacing: 1px; text-shadow: none;" class="btn btn-custom 
                                 $point = account()->getPoint(1, $_SESSION['username']);
                                 $rank = query("SELECT * FROM setting_rank WHERE id = ?", [1])->fetch();
                                 if($point >= $rank['silver'] and $point < $rank['gold'] and $point < $rank['hacker']){
-                                    echo '<img src="../public/img/rank/Ellipse_3.svg" width="100%">';
+                                    echo '<img src="../public/img/rank/Ellipse_3.png" width="100%">';
 
                                 }elseif($point >= $rank['gold'] and $point > $rank['silver'] and $point < $rank['hacker']){
-                                    echo '<img src="../public/img/rank/Ellipse_2.svg" width="100%">';
+                                    echo '<img src="../public/img/rank/Ellipse_2.png" width="100%">';
 
                                 }elseif($point >= $rank['hacker'] and $point > $rank['silver'] and $point > $rank['gold']){
-                                    echo '<img src="../public/img/rank/Ellipse_1.svg" width="100%">';
+                                    echo '<img src="../public/img/rank/Ellipse_1.png" width="100%">';
 
                                 }else{
-                                    echo '<img src="../public/img/rank/Ellipse_3.svg" width="100%">';
+                                    echo '<img src="../public/img/rank/Ellipse_3.png" width="100%">';
                                 }
                                 ?>
                     </div>
@@ -433,16 +433,16 @@ font-size: 20px; letter-spacing: 1px; text-shadow: none;" class="btn btn-custom 
                                 $point = account()->getPoint(3, $_SESSION['username']);
                                 $rank = query("SELECT * FROM setting_rank WHERE id = ?", [1])->fetch();
                                 if($point >= $rank['silver'] and $point < $rank['gold'] and $point < $rank['hacker']){
-                                    echo '<img src="../public/img/rank/Ellipse_3.svg" width="100%">';
+                                    echo '<img src="../public/img/rank/Ellipse_3.png" width="100%">';
 
                                 }elseif($point >= $rank['gold'] and $point > $rank['silver'] and $point < $rank['hacker']){
-                                    echo '<img src="../public/img/rank/Ellipse_2.svg" width="100%">';
+                                    echo '<img src="../public/img/rank/Ellipse_2.png" width="100%">';
 
                                 }elseif($point >= $rank['hacker'] and $point > $rank['silver'] and $point > $rank['gold']){
-                                    echo '<img src="../public/img/rank/Ellipse_1.svg" width="100%">';
+                                    echo '<img src="../public/img/rank/Ellipse_1.png" width="100%">';
 
                                 }else{
-                                    echo '<img src="../public/img/rank/Ellipse_3.svg" width="100%">';
+                                    echo '<img src="../public/img/rank/Ellipse_3.png" width="100%">';
                                 }
                                 ?>
                     </div>
@@ -615,6 +615,12 @@ font-size: 20px; letter-spacing: 1px; text-shadow: none;" class="btn btn-custom 
 
     </div>
 
+    
+    
+    <?php
+    require_once("../totop.php");
+    ?>
+    
     <!-- Parallax start -->
     <div class="parallax"></div>
     <!-- Parallax end -->
