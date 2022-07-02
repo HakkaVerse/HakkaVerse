@@ -1,4 +1,9 @@
 $(document).ready(function(){
+  $.post("../../../setting.php", {check: "check"},function(data){
+    if(data == "true"){
+      location.href = "../../";
+    }
+  });
   var answer1 = $("#answer1");
   var answer2 = $("#answer2");
   var answer3 = $("#answer3");
@@ -8,10 +13,10 @@ $(document).ready(function(){
   var answerbutton3 = $("#answerbutton3");
   var answerbutton4 = $("#answerbutton4");
 
-  answer1.val(getCookie("answer1"));
+  /*answer1.val(getCookie("answer1"));
   answer2.val(getCookie("answer2"));
   answer3.val(getCookie("answer3"));
-  answer4.val(getCookie("answer4"));
+  answer4.val(getCookie("answer4"));*/
 
   answerbutton1.click(function(){
       if(answer1.val() == "HKA{SQL_INJECTION_3840}"){
@@ -20,6 +25,9 @@ $(document).ready(function(){
           answer1.addClass("text-center");
           answer1.addClass("disabled");
           answer1.val("คำตอบถูกต้อง !!!");
+          $.post("../../../setting.php", {sql_question: "lv1", answer: "HKA{SQL_INJECTION_3840}"},function(data){
+              console.log(data);
+            });
           setTimeout(function(){
               answer1.removeClass("border-success");
               answer1.removeClass("text-center");
@@ -43,6 +51,9 @@ $(document).ready(function(){
           answer2.addClass("text-center");
           answer2.addClass("disabled");
           answer2.val("คำตอบถูกต้อง !!!");
+          $.post("../../../setting.php", {sql_question: "lv2", answer: "HKA{SQL_INJECTION_9581}"},function(data){
+              console.log(data);
+            });
           setTimeout(function(){
               answer2.removeClass("border-success");
               answer2.removeClass("text-center");
@@ -66,6 +77,9 @@ $(document).ready(function(){
           answer3.addClass("text-center");
           answer3.addClass("disabled");
           answer3.val("คำตอบถูกต้อง !!!");
+          $.post("../../../setting.php", {sql_question: "lv3", answer: "HKA{SQL_INJECTION_1093}"},function(data){
+              console.log(data);
+            });
           setTimeout(function(){
             answer3.removeClass("border-success");
             answer3.removeClass("text-center");
@@ -89,6 +103,9 @@ $(document).ready(function(){
           answer4.addClass("text-center");
           answer4.addClass("disabled");
           answer4.val("คำตอบถูกต้อง !!!");
+          $.post("../../../setting.php", {sql_question: "lv4", answer: "HKA{SQL_INJECTION_MASTER}"},function(data){
+              console.log(data);
+            });
           setTimeout(function(){
             answer4.removeClass("border-success");
             answer4.removeClass("text-center");

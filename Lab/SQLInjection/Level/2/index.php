@@ -1,3 +1,11 @@
+
+<?php
+require_once("../../../../_system/system.php");
+
+if(!isset($_SESSION['sql_1'])){
+    header("Location: ../1");
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -23,7 +31,7 @@
 
     <!-- Jquery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js?v=8"></script>
+    <script src="script.js?v=2"></script>
 </head>
 
 <body>
@@ -42,24 +50,44 @@
     <img class="imagebanner" src="img/banner.jpg">
     <div class="imgshadow"></div>
     <div class="text-center text-white mt-5" style="font-size: 85px; font-weight: 900; letter-spacing: 1px;">
-        <span class="">ERROR BASED SQLI</span>
+        <span class="">BLIND SQLI</span>
     </div>
     <div class="container mt-5">
+
         <div class="webhead">
             <i style="padding-left: 30px;padding-right: 24px;" class="fa-solid fa-arrow-left headicon"></i>
             <i style="padding-right: 24px;" class="fa-solid fa-arrow-right headicon"></i>
             <a href=""><i style="padding-right: 24px;" class="fa-solid fa-arrow-rotate-right headicon"></i></a>
-            <input id="input" class="urlweb text-center" value="https://hakka.hka/article?id=1">
+            <div id="input" class="urlweb text-center"><span><i class="fa-solid fa-lock"></i>
+                    https://hakka.hka/login</span>
+            </div>
         </div>
         <div class="webcontent mt-4">
-            <div id="content1">
-                <h3 class="text-white" id="article">บทความ</h3>
-                <p class="smalltext">รหัสของบทความนี้ : <span id="article_code">x</span></p>
-                <p id="textarticle" class="mt-4"><b>สวัสดีครับทุกท่าน !!</b>
-                    ยินดีตอนรับเข้าสู้เนื้อหาส่วนแรกของเว็บไซต์ใหม่ของเรานะครับ......</p>
+            <div id="content1" class="mt-3">
+                <center>
+                    <h5>เข้าสู่ระบบ</h5>
+                    <div class="col-lg-4 mt-4">
+                        <input id="username" class="input" autocomplete="off" placeholder="ชื่อผู้ใช้">
+                        <input id="password" type="password" autocomplete="off" class="input mt-4"
+                            placeholder="รหัสผ่าน">
+                        <button id="formsubmit" class="btn-orange text-white mt-4">เข้าสู่ระบบ</button>
+
+                    </div>
+                </center>
             </div>
-            <div id="content2">
-                <p><b id="sqlstatus"></b> <span id="sqltext"></span></p>
+            <div id="content2" class="hide">
+                <center>
+                    <h4>เข้าสู่ระบบ</h4>
+                    <div class="col-lg-4 mt-4">
+                        <p style="font-size: 20px;">คุณสามารถทำการข้ามแลปทดสอบนี้ไปได้เลยครับ
+                            <br>แล้วเจอกันในแลปถัดไป
+                        </p>
+                        <a href="../3/" class="btn btn-orange text-white mt-3" style="font-size: 20px;">LEVEL THREE <i
+                                style="padding-left: 5px;" class="fa-solid fa-circle-arrow-right"></i></a>
+
+                    </div>
+                </center>
+
             </div>
         </div>
         <div class="row">
@@ -67,7 +95,8 @@
                 <div class="description">
                     <div class="text-bg-white">SQL Query</div>
                     <div class="mt-3">
-                        <b id="sqlquery">select * from article where id = 1</b>
+                        <b id="sqlquery">select * from users where username= '<span id="useroutput"></span>' and
+                            password='<span id="passoutput"></span>' LIMIT 1;</b>
                     </div>
                     <div class="mt-3"></div>
 
@@ -75,34 +104,17 @@
             </div>
             <div class="col-lg-6 mt-4">
                 <div class="description">
-                    <div class="text-bg-white-thai">คำตอบ</div>
-                    <div class="mt-3 text-center text-white">
-                        <p>รหัสผ่านของ <b>Hakka</b> คืออะไร ?</p>
+                    <div class="text-bg-white-thai">ผลลัพธ์ที่ได้</div>
+                    <div class="mt-3 text-white">
+                        <p id="result"></p>
                     </div>
-                    <div id="answer1" class="">
-                        <div class="mt-3 text-center">
-                            <input id="password" class="input w-75 text-center" autocomplete="off"
-                                placeholder="รหัสผ่าน">
-                        </div>
-                        <div class="mt-4 text-center">
-                            <a id="checkButton" class="btn btn-orange text-white">เช็ครหัสผ่าน</a>
-                        </div>
-                    </div>
-                    <div id="answer2" class="hide">
-                        <div class="mt-5 text-center">
-                            <a id="checkButton" href="../2/" class="btn btn-orange text-white"
-                                style="font-size: 20px;">LEVEL TWO <i style="padding-left: 5px;"
-                                    class="fa-solid fa-circle-arrow-right"></i></a>
-                        </div>
-                    </div>
-
                     <div class="mt-3"></div>
 
                 </div>
             </div>
             <div class="col-lg-6 mt-1">
                 <center>
-                    <div class="custom-card2 text-center hide" id="win">HKA{SQL_INJECTION_3840}</div>
+                    <div class="custom-card2 text-center mt-3 hide" id="win">HKA{SQL_INJECTION_9581}</div>
 
                 </center>
             </div>

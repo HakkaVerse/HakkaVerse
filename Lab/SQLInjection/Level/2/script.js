@@ -1,4 +1,10 @@
 $(document).ready(function(){
+  $.post("../../../setting.php", {check_sql: "lv1"},function(data){
+    if(data == "true"){
+      location.href = "../1";
+      return true;
+    }
+  });
     var input = $("#input");
     var content1 = $("#content1");
     var article = $("#article");

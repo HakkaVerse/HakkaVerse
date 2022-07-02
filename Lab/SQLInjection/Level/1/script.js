@@ -1,4 +1,11 @@
 $(document).ready(function(){
+    
+  $.post("../../../setting.php", {check: "check"},function(data){
+    if(data == "true"){
+      location.href = "../../";
+      return true;
+    }
+  });
     var input = $("#input");
     var content1 = $("#content1");
     var article = $("#article");

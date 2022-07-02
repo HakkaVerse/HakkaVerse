@@ -1,3 +1,10 @@
+<?php
+require_once("../../../../_system/system.php");
+
+if(!isset($_SESSION['sql_2'])){
+    header("Location: ../2");
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -11,9 +18,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>HakkaBook</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Kanit:wght@100;200;300;400&family=Nunito:wght@200&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Kanit:wght@100;200;300;400&family=Nunito:wght@200&display=swap" rel="stylesheet">
     <!--load all Font Awesome styles -->
     <link href="../../../../assets/fontawesome/css/all.css" rel="stylesheet">
 
@@ -42,24 +47,54 @@
     <img class="imagebanner" src="img/banner.jpg">
     <div class="imgshadow"></div>
     <div class="text-center text-white mt-5" style="font-size: 85px; font-weight: 900; letter-spacing: 1px;">
-        <span class="">ERROR BASED SQLI</span>
+        <span class="">BOOLEAN BASED BLIND SQLI</span>
     </div>
     <div class="container mt-5">
+        
         <div class="webhead">
             <i style="padding-left: 30px;padding-right: 24px;" class="fa-solid fa-arrow-left headicon"></i>
             <i style="padding-right: 24px;" class="fa-solid fa-arrow-right headicon"></i>
             <a href=""><i style="padding-right: 24px;" class="fa-solid fa-arrow-rotate-right headicon"></i></a>
-            <input id="input" class="urlweb text-center" value="https://hakka.hka/article?id=1">
+            <input id="input" class="urlweb text-center" value="https://hakka.hka/checkuser?username=admin">
         </div>
         <div class="webcontent mt-4">
-            <div id="content1">
-                <h3 class="text-white" id="article">บทความ</h3>
-                <p class="smalltext">รหัสของบทความนี้ : <span id="article_code">x</span></p>
-                <p id="textarticle" class="mt-4"><b>สวัสดีครับทุกท่าน !!</b>
-                    ยินดีตอนรับเข้าสู้เนื้อหาส่วนแรกของเว็บไซต์ใหม่ของเรานะครับ......</p>
+            <div id="jsonoutput">
+                {"taken":true}
             </div>
-            <div id="content2">
-                <p><b id="sqlstatus"></b> <span id="sqltext"></span></p>
+            <div class="mt-3">
+
+            </div>
+        </div>
+        <div class="webhead mt-5">
+            <i style="padding-left: 30px;padding-right: 24px;" class="fa-solid fa-arrow-left headicon"></i> 
+            <i style="padding-right: 24px;" class="fa-solid fa-arrow-right headicon"></i> 
+            <a href=""><i style="padding-right: 24px;" class="fa-solid fa-arrow-rotate-right headicon"></i></a>
+            <div id="input" class="urlweb text-center"><span><i class="fa-solid fa-lock"></i> https://hakka.hka/login</span>
+                </div>
+        </div>
+        <div class="webcontent mt-4">
+            <div id="content1" class="mt-3">
+                <center>
+                    <h5>เข้าสู่ระบบ</h5>
+                    <div class="col-lg-4 mt-4">
+                        <input id="username" class="input" autocomplete="off" placeholder="ชื่อผู้ใช้">
+                        <input id="password" type="password" autocomplete="off" class="input mt-4" placeholder="รหัสผ่าน">
+                        <button id="formsubmit" class="btn btn-orange text-white mt-4">เข้าสู่ระบบ</button>
+
+                    </div>
+                </center>
+            </div>
+            <div id="content2" class="hide">
+                <center>
+                    <h5>เข้าสู่ระบบ</h5>
+                    <div class="col-lg-4 mt-4">
+                        <input id="username" class="input" autocomplete="off" placeholder="ชื่อผู้ใช้">
+                        <input id="password" type="password" autocomplete="off" class="input mt-4" placeholder="รหัสผ่าน">
+                            <a href="../4/" class="btn btn-orange text-white mt-3" style="font-size: 20px;">LEVEL FOUR <i style="padding-left: 5px;" class="fa-solid fa-circle-arrow-right"></i></a>
+
+                    </div>
+                </center>
+
             </div>
         </div>
         <div class="row">
@@ -67,42 +102,25 @@
                 <div class="description">
                     <div class="text-bg-white">SQL Query</div>
                     <div class="mt-3">
-                        <b id="sqlquery">select * from article where id = 1</b>
+                        <b id="sqlquery">select * from users where username = '<span id="sqltext"></span>' LIMIT 1;</b>
                     </div>
                     <div class="mt-3"></div>
-
+                    
                 </div>
             </div>
             <div class="col-lg-6 mt-4">
                 <div class="description">
-                    <div class="text-bg-white-thai">คำตอบ</div>
-                    <div class="mt-3 text-center text-white">
-                        <p>รหัสผ่านของ <b>Hakka</b> คืออะไร ?</p>
+                    <div class="text-bg-white-thai">ผลลัพธ์ที่ได้</div>
+                    <div class="mt-3 text-white">
+                        <p id="result"></p>
                     </div>
-                    <div id="answer1" class="">
-                        <div class="mt-3 text-center">
-                            <input id="password" class="input w-75 text-center" autocomplete="off"
-                                placeholder="รหัสผ่าน">
-                        </div>
-                        <div class="mt-4 text-center">
-                            <a id="checkButton" class="btn btn-orange text-white">เช็ครหัสผ่าน</a>
-                        </div>
-                    </div>
-                    <div id="answer2" class="hide">
-                        <div class="mt-5 text-center">
-                            <a id="checkButton" href="../2/" class="btn btn-orange text-white"
-                                style="font-size: 20px;">LEVEL TWO <i style="padding-left: 5px;"
-                                    class="fa-solid fa-circle-arrow-right"></i></a>
-                        </div>
-                    </div>
-
                     <div class="mt-3"></div>
-
+                    
                 </div>
             </div>
             <div class="col-lg-6 mt-1">
                 <center>
-                    <div class="custom-card2 text-center hide" id="win">HKA{SQL_INJECTION_3840}</div>
+                    <div class="custom-card2 text-center mt-3 hide" id="win">HKA{SQL_INJECTION_1093}</div>
 
                 </center>
             </div>
