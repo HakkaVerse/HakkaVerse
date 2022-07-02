@@ -44,6 +44,25 @@ $lesson = query("SELECT * FROM lesson WHERE id=?", [$_GET['id']])->fetch();
     </div>
     <div class="mt-5 text-white">
         <hr>
+        <div class="text-center">
+            <h3>ปล่อยข้อสอบกี่ข้อ</h3>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <form action="action/action.php" method="post">
+                    <div class="mt-3">
+                        <input name="show_id" value="<?php echo $lesson['id']; ?>" type="hidden">
+                        <input name="show_list" autocomplete="off" type="number" value="<?php echo $lesson['show_test']; ?>" class="form-control bg-dark text-light" placeholder="1-xxxx" required>
+
+                    </div>
+                        <div class="mt-3 text-center">
+                            <button type="submit" class="btn btn-success">Confirm</button>
+                        </div>
+
+                </form>
+            </div>
+        </div>
+        <hr>
         <center>
             <div class="col-lg-8">
                 <form action="action/action.php" method="post">
@@ -78,12 +97,6 @@ $lesson = query("SELECT * FROM lesson WHERE id=?", [$_GET['id']])->fetch();
                     <div class="mt-3">
                         <input name="answer" type="number" autocomplete="off" class="form-control bg-dark text-light"
                             placeholder="คำตอบ 1 - 4" required>
-                    </div>
-                    <div class="mt-3">
-                        <input value="hide" name="hide" class="" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Hide
-                        </label>
                     </div>
                     <div class="mt-3">
                         <button type="submit" class="btn btn-success">ADD</button>

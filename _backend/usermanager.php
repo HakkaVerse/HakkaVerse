@@ -41,12 +41,12 @@ require_once("header.php");
                                         <div class="mt-3">
                                             <label>ชื่อผู้ใช้</label>
                                             <input class="form-control bg-dark text-white"
-                                                value="<?php echo $user['username']; ?>" disabled>
+                                                value="<?php echo clean($user['username']); ?>" disabled>
                                         </div>
                                         <div class="mt-3">
                                             <label>อีเมล</label>
                                             <input class="form-control bg-dark text-white"
-                                                value="<?php echo $user['email']; ?>" disabled>
+                                                value="<?php echo clean($user['email']); ?>" disabled>
                                         </div>
                                         <div class="mt-3">
                                             <label>เข้าใช้งานเมื่อวันที่</label>
@@ -218,7 +218,7 @@ require_once("header.php");
             $skill_7 = number_format($user['skill_7'], 2, ".", "");
         }
         $skill_8 = 0;
-        if($user['skill_7'] > 100){
+        if($user['skill_8'] > 100){
             $skill_8 = 100;
         }else{
             $skill_8 = number_format($user['skill_8'], 2, ".", "");
@@ -498,17 +498,17 @@ require_once("header.php");
                                 <?php
                                 $user = query("SELECT * FROM user order by point DESC")->fetchAll();
                                 arsort($user);
-                                if(count($user) < 10){
+                                if(count($user) < 100){
                                     $a = count($user);
                                 }else{
-                                    $a = 10;
+                                    $a = 100;
                                 }
                                 for($i=0;$i < $a;$i++){
                                 ?>
                                 <tr>
                                     <th scope="row"><?php echo ($i + 1); ?></th> 
-                                    <td><?php echo $user[$i]['username']; ?></td>
-                                    <td><?php echo $user[$i]['email']; ?></td>
+                                    <td><?php echo clean($user[$i]['username']); ?></td>
+                                    <td><?php echo clean($user[$i]['email']); ?></td>
                                     <td><?php echo $user[$i]['point']; ?></td> 
                                 </tr>
                                 <?php } ?>

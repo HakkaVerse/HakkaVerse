@@ -179,12 +179,6 @@ $lesson = query("SELECT * FROM lesson WHERE id=?", [$_GET['page']])->fetch();
                                     class="form-control bg-dark text-light" placeholder="คำตอบ 1 - 4" required>
                             </div>
                             <div class="mt-3">
-                                <input <?php if($test['hide'] == "true"){echo "checked";} ?> value="hide" name="hide" class="" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Hide
-                                </label>
-                            </div>
-                            <div class="mt-3">
                                 <button type="submit" class="btn btn-success">SAVE!!</button>
                             </div>
                         </form>
