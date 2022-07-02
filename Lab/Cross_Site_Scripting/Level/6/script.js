@@ -1,4 +1,10 @@
 $(document).ready(function () {
+  $.post("../../../setting.php", {check_xss: "lv5"},function(data){
+    if(data == "true"){
+      location.href = "../5";
+      return true;
+    }
+  });
   var confirm = $("#confirm");
   var input = $("#input");
   var alert1 = $("#alert1");
@@ -56,7 +62,7 @@ $(document).ready(function () {
     }
   });
 
-  if(getCookie("win")){
+  /*if(getCookie("win")){
     input.val("/images/hack.jpg");
     xss.text("XSS Payload Successful");
     output.removeClass("hide");
@@ -65,7 +71,7 @@ $(document).ready(function () {
     nextlevel.removeClass("text-secondary");
     nextlevel.addClass("nextLevel");
     $("#win").removeClass("hide");
-  }
+  }*/
 
 });
 

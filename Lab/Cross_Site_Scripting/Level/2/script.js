@@ -1,4 +1,10 @@
 $(document).ready(function () {
+  $.post("../../../setting.php", {check_xss: "lv1"},function(data){
+    if(data == "true"){
+      location.href = "../1";
+      return true;
+    }
+  });
   var confirm = $("#confirm");
   var input = $("#input");
   var alert1 = $("#alert1");

@@ -1,4 +1,11 @@
 $(document).ready(function(){
+    
+  $.post("../../../setting.php", {check: "check"},function(data){
+    if(data == "true"){
+      location.href = "../../";
+      return true;
+    }
+  });
     var input = $("#input");
     input.val(getCookie("end"));
 });
