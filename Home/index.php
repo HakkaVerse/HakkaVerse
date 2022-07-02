@@ -315,92 +315,20 @@
 
     <!-- Tutorial 1 -->
     <div style="margin-top: 140px;"></div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6" style="margin-top: 150px;">
-                <h1 class="text4">เนื้อหาภายในเว็บไซต์</h1>
-                <p class="p mt-3">
-                    หลักสูตรของเราในตอนนี้มีทั้งหมด 3 ตัวด้วยกัน ซึ่งจะแบ่งเป็น<br>
-                    ช่องโหว่ 2 ตัวและการป้องกัน 1 ตัว โดยเนื้อหานั้นจะอัดแน่นอย่าง<br>
-                    มาก เพราะจะมีทั้งเนื้อหาภายในและชีทการสอนให้กับผู้เรียนทุกคน<br>
-                    ได้ทำการดาวโหลดกันแบบฟรีๆเลย
-                </p>
-            </div>
-            <div class="col-lg-6">
-                <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_7nqsusht.json"
-                    background="transparent" speed="1" style="width: 520px; height: 520px; margin-left: auto;" loop
-                    autoplay>
-                </lottie-player>
-            </div>
-        </div>
-    </div>
+    <center>
+            <div class="col-lg-8">
+                <!-- Link Youtube Tutorial -->
+                <div class="ratio ratio-16x9">
+                    <!-- ตัวอย่างลิงก์ Youtube ที่เอามาเป็นตัวอย่าง https://www.youtube.com/watch?v=3UV8OZj2olg ให้ Copy แค่ตรงส่วนนี้ "3UV8OZj2olg" เอามาแทนที่ข้างล่าง ไม่ต้องยุ่งกับ "https://www.youtube.com/embed/" -->
+                    <iframe style="border-radius: 30px;" src="https://www.youtube.com/embed/3UV8OZj2olg" title="YouTube video"
+                        allowfullscreen></iframe>
+                </div>
 
-
-    <div style="margin-top: 100px;"></div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-7">
-                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_ynqekmvj.json"
-                    background="transparent" speed="1" style="width: 520px; height: 520px;" loop autoplay>
-                </lottie-player>
             </div>
-            <div class="col-lg-5" style="margin-top: 150px;  margin-right: left;">
-                <h1 class="text4">แบบฝึกหัด</h1>
-                <p class="p mt-3">
-                    เราจะมีข้อสอบให้พวกเราได้ทำกันด้วยนะครับโดยที่จะมีทั้งหมด
-                    90 ข้อ แบ่งเป็น 3 บท มีบทละ 30 ข้อด้วยกัน ซึ่งเราจะมีในส่วน
-                    ของข้อสอบลับด้วยนะครับแต่จะทำข้อสอบลับได้ยังไง ต้องไปรอดู
-                    กันอีกที โดยข้อสอบทั้งหมดจะมีผลกับการประเมินคะแนน
-                    ด้วยนะค้าบบบ
-                </p>
-            </div>
-        </div>
-    </div>
 
+    </center>
 
-    <!-- Tutorial 2 -->
-    <div style="margin-top: 100px;"></div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6" style="margin-top: 150px;">
-                <h1 class="text4">แลปทดลองของเว็บไซต์</h1>
-                <p class="p mt-3">
-                    แลปทดสอบของเราจะมีทั้งหมด 3 แลปและอีก 16 เลเวลได้เท่ากันเพื่อ
-                    เป็นการทดสอบฝีมือหลังจากที่ได้เรียนและทำข้อสอบมาจนหมดแล้วโดย
-                    แลปของเรากจะมีคะแนนเหมือนกันนะครับและสามารถกดเข้าไปเล่นได้
-                    เรื่อยๆเลยแต่คะแนนจะคิดแล้วเดียวนะค้าบบบ
-                </p>
-            </div>
-            <div class="col-lg-6">
-                <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_l4fgppor.json"
-                    background="transparent" speed="1" style="width: 520px; height: 520px; margin-left: auto;" loop
-                    autoplay>
-                </lottie-player>
-            </div>
-        </div>
-    </div>
-
-
-    <div style="margin-top: 100px;"></div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-7">
-                <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_pp6psjrv.json"
-                    background="transparent" speed="1" style="width: 520px; height: 520px;" loop autoplay>
-                </lottie-player>
-            </div>
-            <div class="col-lg-5" style="margin-top: 150px;  margin-right: left;">
-                <h1 class="text4">แรงค์กิ้งคะแนน</h1>
-                <p class="p mt-3">
-                    ระบบนี้เราทำขึ้นมาเพื่อวัดระดับความสามารถของแต่ละบุคคลที่เข้า
-                    มาใช้งานในเว็บไซต์ของเราว่าเขามีถนัดด้านไหน เพราะจะมีการสอบ
-                    2 รอบเพื่อวัดความรู้ทั้งก่อนเรียนและหลังเรียนอีกด้วยยยย
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div style="margin-top: 140px;"></div>
+    <div style="margin-top: 250px;"></div>
     <div class="text-center">
         <h1 class="text2 text-white">อาจารย์ที่ปรึกษาด้านโปรเจ็ค</h1>
         <p class="p">จัดทำขึ้นเพื่อถ่ายทอดความรู้ด้านไซเบอร์<br>
@@ -414,20 +342,19 @@
                 <div style="width: 100%; height: 18rem;">
                     <!-- Profile จาร -->
                     <img class="profile-img"
-                        src="https://elearningindustry.com/wp-content/uploads/2019/10/professional-development-tools-for-teachers.jpg">
+                        src="https://media.discordapp.net/attachments/878242783947784234/978004725209382912/259596135_2087237888097370_8538743087360702304_n.png">
                 </div>
                 <div>
-                    <a style="width: 95%;" class="btn btn-custom btn-glow mt-2">Teacher</a>
+                    <a style="width: 95%;" class="btn btn-custom btn-glow mt-2">Advisor</a>
                 </div>
                 <div class="mt-2"></div>
             </div>
         </center>
         <div class="mt-3">
-            <h2 style="color: #F0A500;">Teacher</h2>
+            <h2 style="color: #F0A500;">ทศพล บ้านคลองสี่</h2>
         </div>
         <div class="mt-3 text-white" style="font-size:19px;">
-            เป็นนักศึกษา <b style="color:#F0A500;">Bangkok University</b> <br>
-            ศึกษาอยู่ คณะวิศวกรรมศาสตร์ สาขาไฟฟ้ากำลัง
+            อาจารย์ที่ปรึกษา <br>
         </div>
     </div>
 
@@ -450,7 +377,7 @@
                         <div class="card text-center" style="border-radius: 20px; width: 18rem;">
                             <div style="width: 100%; height: 18rem;">
                                 <!-- Profile Aem -->
-                                <img class="profile-img" src="https://i.ibb.co/b70P4FF/03.jpg">
+                                <img class="profile-img" src="https://cdn.discordapp.com/attachments/878242783947784234/977909538294497320/C2A6A1CC-C1BC-4466-94EF-AD9D2F6B9F8D.jpg">
                             </div>
                             <div>
                                 <a style="width: 95%;" class="btn btn-custom btn-glow mt-2">UX / UI Designer</a>
@@ -471,7 +398,7 @@
                             <div style="width: 100%; height: 18rem;">
                                 <!-- Profile Kao -->
                                 <img class="profile-img"
-                                    src="https://i.ibb.co/vHDh5j0/259250700-605818847402888-312807794404373415-n.png">
+                                    src="https://cdn.discordapp.com/attachments/878242783947784234/977907034286608454/unknown.png">
                             </div>
                             <div>
                                 <a style="width: 95%;" class="btn btn-custom btn-glow mt-2">Research</a>
@@ -492,7 +419,7 @@
                             <div style="width: 100%; height: 18rem;">
                                 <!-- Profile Gab -->
                                 <img class="profile-img"
-                                    src="https://i.ibb.co/Qr854Gc/259189907-1037533867029706-2425511676412870699-n.png">
+                                    src="https://cdn.discordapp.com/attachments/878242783947784234/977907168663719936/unknown.png">
 
                             </div>
                             <div>
@@ -514,7 +441,7 @@
                             <div style="width: 100%; height: 18rem;">
                                 <!-- Profile Bank -->
                                 <img class="profile-img"
-                                    src="https://i.ibb.co/7XGx7t2/259471247-1502642280102610-4660645718112066063-n.jpg">
+                                    src="https://cdn.discordapp.com/attachments/878242783947784234/977907004641263616/IMG_4893.jpg">
 
                             </div>
                             <div>
@@ -535,7 +462,7 @@
                         <div class="card text-center" style="border-radius: 20px; width: 18rem;">
                             <div style="width: 100%; height: 18rem;">
                                 <!-- Profile Poom -->
-                                <img class="profile-img" src="https://i.ibb.co/gjqQFLJ/02.jpg">
+                                <img class="profile-img" src="https://cdn.discordapp.com/attachments/878242783947784234/977907258279219210/unknown.png">
 
                             </div>
                             <div>
@@ -564,6 +491,13 @@
             </button>
         </div>
     </div>
+    
+
+    <?php
+    require_once("../totop.php");
+    ?>
+
+
 
     <!-- Parallax start -->
     <div class="parallax"></div>

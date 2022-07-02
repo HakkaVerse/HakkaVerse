@@ -146,6 +146,9 @@ if(!isset($_SESSION['username'])){
 
 
 
+    <?php
+    require_once("../totop.php");
+    ?>
     <!-- Custom JS -->
     <script src="../assets/jscustom/carousel.js"></script>
     <!-- Optional JavaScript; choose one of the two! -->

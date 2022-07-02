@@ -29,7 +29,7 @@
                 <!-- Profile Image
                 src="link"
             -->
-                <img src="https://i.ibb.co/gjqQFLJ/02.jpg"
+                <img src="https://cdn.discordapp.com/attachments/878242783947784234/977907258279219210/unknown.png"
                     style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover;">
 
                 <span style="padding-left: 19px;position: absolute; padding-top: 55px;"><b style="color: WHITE;">By</b>
@@ -56,8 +56,8 @@
 
                     <button style="width: 230px;" class="btn-custom-border"><b
                             style="color: white;"><?php echo account()->checkLesson($_GET['testlist']); ?> /
-                            30</b></button>
-                    <a href="Download/file.pdf" download><button style="width: 230px; left:30px;"
+                            <?php echo account()->checkLessonList($_GET['testlist']); ?></b></button>
+                    <a href="Download/CROSS - SITE SCRIPTING REPORT.pdf" download><button style="width: 230px; left:30px;"
                             class="btn btn-custom">เอกสาร. PDF</button></a>
                 </div>
             </div>
@@ -84,9 +84,12 @@
                         $i = 0;
                         foreach(query("SELECT * FROM test WHERE lesson_id = ?", [$_GET['testlist']]) as $test){
                             if($test['hide'] != "true"){
+                                if($i >= account()->checkLessonList($_GET['testlist'])){
+                                    break;
+                                }
                                 $i++;
                         ?>
-                        <div class="col-lg-4 text-white mt-5">
+                        <div id="answer<?php echo $i; ?>" class="col-lg-4 text-white mt-5">
                             <a href="
                             <?php 
                                 if(query("SELECT * FROM test_history WHERE username= ? AND lesson_id = ? AND answer = ?", [$_SESSION['username'], $test['lesson_id'], $i])->rowCount() > 0){
@@ -104,7 +107,7 @@
                             ">
                                 <div class="<?php if($i == 1){echo "testlist-card";}else{echo "testlist-card-2";} ?>">
                                     <span
-                                        class="<?php if($i >= 10){echo "testlist-num-more";}else{echo "testlist-num";} ?>"><?php echo $i; ?></span>
+                                        class="<?php if($i >= 1000){echo "testlist-num3";}elseif($i >= 100){echo "testlist-num2";}elseif($i >= 10){echo "testlist-num-more";}else{echo "testlist-num";} ?>"><?php echo $i; ?></span>
                                     <img src="../../public/img/design/circle.png" class="circle">
                                     <div class="pass">
                                         <span class="pass-text">
@@ -199,29 +202,33 @@
             </div>
         </div>
         <div id="formhide" class="mt-5 hide">
-            <center>
+            <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="card bg-dark shadow-card" style="border-radius: 18px;">
                         <div style="padding:30px;">
-                            <div class="text-center text-white">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9 text-white">
                                 <form action="secret.php" method="post">
 
                                     <input name="lesson" value="<?php echo $_GET['testlist']; ?>" type="hidden">
 
-                                    <h3 class="text-white">คำถาม</h3>
-                                    <label class="mt-4">คำตอบสุดท้ายที่ได้จากการทดลองแลปคืออะไร ?</label>
+                                    <center><h3 class="text-white">คำถาม</h3></center>
+                                    <label class="mt-4 text-start">คำตอบสุดท้ายที่ได้จากการทดลองแลปคืออะไร ?</label>
                                     <center><input name="answer" autocomplete="off"
-                                            class="w-75 form-control form-control-lg bg-dark text-white shadow-card mt-2 border-secondary"
+                                            class="form-control form-control-lg bg-dark text-white shadow-card mt-2 border-secondary"
                                             required>
-                                    </center>
                                     <button type="submit" style="width: 250px;"
                                         class="btn btn-custom mt-4">ยืนยันคำตอบ</button>
+                                    </center>
                                 </form>
                             </div>
+
+                        </div>
                         </div>
                     </div>
                 </div>
-            </center>
+
+            </div>
         </div>
 
     </div>

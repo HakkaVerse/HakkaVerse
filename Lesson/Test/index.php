@@ -154,8 +154,11 @@ if(!isset($_SESSION['username'])){
     ?>
 
 
+    
+<?php
+    require_once("../../totop.php");
+    ?>
     <!-- Parallax start -->
-    <div class="parallax"></div>
     <!-- Parallax end -->
     <!-- Optional JavaScript; choose one of the two! -->
 

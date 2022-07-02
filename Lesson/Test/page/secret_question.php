@@ -12,7 +12,7 @@ if(query("SELECT * FROM `secret_history` WHERE username=? AND lesson_id=?", [$_S
     <h4 class="text-white">ยินดีด้วย!! คุณได้สำเร็จบทเรียนนี้แล้ว </h4>
 </div>
 <div class="mt-4">
-    <a class="btn btn-custom" href="?testlist=<?php echo $_GET['secret']; ?>" style="border-radius: 20px; width: 150px;">ตกลง</a>
+    <a class="btn btn-custom" href="?testlist=<?php echo $_GET['secret']; ?>" style="width: 150px;">ตกลง</a>
 </div>
 </center>
 
@@ -23,7 +23,7 @@ if(query("SELECT * FROM `secret_history` WHERE username=? AND lesson_id=?", [$_S
 <div class="container mt-5" style="max-width: 1000px;">
     <div class="row">
         <div class="col-lg-6">
-            <a href="../Test/?testlist=<?php echo $_GET['secret']; ?>" style="width: 236.02px; border-radius: 25px;"
+            <a href="../Test/?testlist=<?php echo $_GET['secret']; ?>" style="width: 236.02px;"
                 class="btn btn-custom"><i style="margin-right: 10px;" class="fa-solid fa-circle-arrow-left"></i>
                 กลับสู่หน้าหลัก</a>
 

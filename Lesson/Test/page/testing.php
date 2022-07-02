@@ -2,10 +2,13 @@
 $lesson = $_GET['testing'];
 $answer = $_GET['answer'];
 $id = [];
+if($answer > account()->checkLessonList($lesson)){
+    header("Location: ?testlist=$lesson");
+    return true;
+}
 $max = query("SELECT * FROM test WHERE lesson_id = ?", [$_GET['testing']])->rowCount() - query("SELECT * FROM test WHERE lesson_id = ? AND hide = ?", [$_GET['testing'], "true"])->rowCount();
 if($answer > $max){
     header("Location: ?testlist=$lesson");
-
 }
 foreach(query("SELECT * FROM test WHERE lesson_id = ?", [$_GET['testing']]) as $t){
     if(query("SELECT * FROM test_history WHERE username = ? AND test_id = ?", [$_SESSION['username'], $t['id']])->rowCount() < 1){
@@ -58,28 +61,42 @@ if(!isset($_GET['answer'])){
                         <input type="hidden" name="testing" value="<?php echo $test['lesson_id'] ?>">
                         <input type="hidden" name="lesson_id" value="<?php echo $test['lesson_id'] ?>">
                         <input type="hidden" name="test_id" value="<?php echo $test['id'] ?>">
-                        <div class="form-check mt-4 <?php if($test['choice_1'] == "-"){echo "hide";} ?>">
-                            <input class="form-check-input" type="radio" name="answer" id="check1" value="1">
+
+                        <?php 
+                        $choice = [1,2,3,4];
+                        $random1 = $choice[array_rand($choice)];
+                        unset($choice[$random1 - 1]);
+                        $random2 = $choice[array_rand($choice)];
+                        unset($choice[$random2 - 1]);
+                        $random3 = $choice[array_rand($choice)];
+                        unset($choice[$random3 - 1]);
+                        $random4 = $choice[array_rand($choice)];
+                        unset($choice[$random4 - 1]);
+                        //print_r($choice);
+                        ?>
+                        
+                        <div class="form-check mt-4 <?php if($test['choice_'.$random1] == "-"){echo "hide";} ?>">
+                            <input class="form-check-input" type="radio" name="answer" id="check1" value="<?php echo $random1; ?>">
                             <label class="form-check-label" for="check1">
-                                <span style="padding-left: 18px;"><?php echo $test['choice_1'] ?></span>
+                                <span style="padding-left: 18px;"><?php echo $test['choice_'.$random1] ?></span>
                             </label>
                         </div>
-                        <div class="form-check mt-4 <?php if($test['choice_2'] == "-"){echo "hide";} ?>">
-                            <input class="form-check-input" type="radio" name="answer" id="check2" value="2">
+                        <div class="form-check mt-4 <?php if($test['choice_'.$random2] == "-"){echo "hide";} ?>">
+                            <input class="form-check-input" type="radio" name="answer" id="check2" value="<?php echo $random2; ?>">
                             <label class="form-check-label" for="check2">
-                                <span style="padding-left: 18px;"><?php echo $test['choice_2'] ?></span>
+                                <span style="padding-left: 18px;"><?php echo $test['choice_'.$random2] ?></span>
                             </label>
                         </div>
-                        <div class="form-check mt-4 <?php if($test['choice_3'] == "-"){echo "hide";} ?>">
-                            <input class="form-check-input" type="radio" name="answer" id="check3" value="3">
+                        <div class="form-check mt-4 <?php if($test['choice_'.$random3] == "-"){echo "hide";} ?>">
+                            <input class="form-check-input" type="radio" name="answer" id="check3" value="<?php echo $random3; ?>">
                             <label class="form-check-label" for="check3">
-                                <span style="padding-left: 18px;"><?php echo $test['choice_3'] ?></span>
+                                <span style="padding-left: 18px;"><?php echo $test['choice_'.$random3] ?></span>
                             </label>
                         </div>
-                        <div class="form-check mt-4 <?php if($test['choice_4'] == "-"){echo "hide";} ?>">
-                            <input class="form-check-input" type="radio" name="answer" id="check4" value="4">
+                        <div class="form-check mt-4 <?php if($test['choice_'.$random4] == "-"){echo "hide";} ?>">
+                            <input class="form-check-input" type="radio" name="answer" id="check4" value="<?php echo $random4; ?>">
                             <label class="form-check-label" for="check4">
-                                <span style="padding-left: 18px;"><?php echo $test['choice_4'] ?></span>
+                                <span style="padding-left: 18px;"><?php echo $test['choice_'.$random4] ?></span>
                             </label>
                         </div>
                         <div class="mt-5">

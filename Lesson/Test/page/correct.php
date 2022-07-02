@@ -21,7 +21,7 @@ $(document).ready(function() {
             </div>
             <div class="col-lg-4">
                 <div class="mt-4">
-                    <a href="?testlist=<?php echo $_GET['lesson']; ?>" style="width: 250px;"
+                    <a href="?testlist=<?php echo $_GET['lesson']."#answer".$_GET['answer']; ?>" style="width: 250px;"
                         class="btn btn-custom" cursorshover="true"><i style="margin-right: 10px;"
                             class="fa-solid fa-circle-arrow-left"></i>
                         กลับสู่หน้าหลัก</a>
