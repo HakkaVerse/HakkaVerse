@@ -68,9 +68,20 @@ class Account{
         }elseif(count(query("SELECT * FROM user WHERE username=?", [$username])->fetchAll()) > 0){
             $_SESSION['register_error_username'] = true;
             return false;
+        }elseif(count(query("SELECT * FROM user WHERE email=?", [$email])->fetchAll()) > 0){
+            $_SESSION['register_error_email'] = true;
+            return false;
         }elseif(query("INSERT INTO user (`username`, `password`, `email`, `date`, `profile`, `group`, `point`, `skill_1`, `skill_2`, `skill_3`, `skill_4`, `skill_5`, `skill_6`, `skill_7`, `skill_8`, `nickname`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [$username, $this->hashPassword($password), $email, now_time(time()), "profile.png", "member", "0","0","0","0","0","0","0","0","0",$username])){
             $_SESSION['register_success'] = true;
-            $this->Login($username, $this->hashPassword($password));
+            if(query("SELECT * FROM verify WHERE email = ?", [$email])->rowCount() > 0){
+                /** Null */
+            }else{
+                $code = hash('sha256', $email.$user);
+                if(SendEmail("Verification Email - Hakkverse Account", "Click the link to verify your email: https://hakkaverse.com/Register/?verify=$code", $email)){
+                    query("INSERT INTO verify (email, username, encode) VALUES (?,?,?)",[$email, $user, $code]);
+                }
+            }
+            //$this->Login($username, $this->hashPassword($password));
             return true;
         }else{
             $_SESSION['register_error'] = true;
@@ -132,10 +143,12 @@ class Account{
     public function getNickName(){
         $user = $_SESSION['username'];
         $u = query("SELECT * FROM user WHERE username=?", [$user])->fetch();
-        if($_SESSION['nickname'] == ""){
+        if(clean($_SESSION['nickname']) == ""){
             return clean($u['username']);
-        }else{
+        }elseif(clean($_SESSION['nickname']) != ""){
             return clean($u['nickname']);
+        }else{
+            return "Unknown";
         }
     }
 
@@ -203,11 +216,12 @@ class Account{
 
     public function checkLesson($lesson){
         $check = query("SELECT * FROM test_history WHERE username=? AND lesson_id=?", [$_SESSION['username'], $lesson])->rowCount();
-        if($check >= 30){
-            return 30;
-        }else{
-            return $check;
-        }
+        return $check;
+    }
+
+    public function checkLessonList($lesson){
+        $check = query("SELECT * FROM lesson WHERE id=?", [$lesson])->fetch()['show_test'];
+        return $check;
     }
     public function checkTestList(){
         $check1 = query("SELECT * FROM test_history WHERE username=? AND lesson_id=?", [$_SESSION['username'],1])->rowCount();
@@ -230,6 +244,15 @@ class Account{
             return 100;
         }else{
             return $check;
+        }
+    }
+
+
+    public function checkLabQuestion($user_id, $lab){
+        if(query("SELECT * FROM lab_question WHERE `user_id`=? AND `lab`=?",[$user_id, $lab])->rowCount() > 0){
+            return query("SELECT * FROM lab_question WHERE `user_id`=? AND `lab`=?",[$user_id, $lab])->fetch()['answer'];
+        }else{
+            return "";
         }
     }
 }

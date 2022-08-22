@@ -2,8 +2,8 @@
 // Config DB
 $dbconfig = [];
 $dbconfig['host'] = "localhost";
-$dbconfig['name'] = "";
-$dbconfig['user'] = "";
+$dbconfig['user'] = "root";
+$dbconfig['name'] = "admin_cyber";
 $dbconfig['pass'] = "";
 
 // VARIABLE DB
