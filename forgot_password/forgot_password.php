@@ -38,8 +38,8 @@ if ($_POST) {
              
                               
                 $mail->isSMTP();                                           
-                $mail->Host       = 'smtp.gmail.com';                     
-                $mail->SMTPAuth   = true;                                   
+                $mail->Host       = 'smtp.gmail.com';
+                $mail->SMTPAuth   = true;
                 $mail->Username   = 'hakkaverse.web@gmail.com';                    
                 $mail->Password   = 'ykivdjvblqcrakei';                             
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            

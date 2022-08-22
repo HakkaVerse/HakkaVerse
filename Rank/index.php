@@ -249,7 +249,7 @@ if(!isset($_SESSION['username'])){
                         <a class="nav-link textw" href="../Lesson/">Lesson</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link textw" href="../Lesson/Test">Exercise</a>
+                        <a class="nav-link textw" href="../Lesson/Test">Test</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link textw " href="../Lab/">Lab</a>

@@ -1,47 +1,62 @@
 <?php
 
-require_once dirname(__FILE__)."/../_system/system.php";
+require_once dirname(__FILE__) . "/../_system/system.php";
 
-if($_POST){
-    if(isset($_POST['email'])){
-        $email = $_POST['email'];
-        $password = account()->hashPassword($_POST['password']);
-        if(query("SELECT * FROM user WHERE email=?", [$email])->rowCount() > 0 && $email != account()->getUser()['email']){
-            $_SESSION['register_error_email'] = true;
-            header("Location: /Profile");
-            return true;
-        }
-        if($password == account()->getUser()['password']){
-            query("UPDATE user SET email=? WHERE username=?", [$email, $_SESSION['username']]);
-            $_SESSION['email'] = $email;
-            header("Location: ./");
-        }else{
-            $_SESSION['error_password'] = true;;
-            header("Location: ./");
+if ($_POST) {
+    if (isset($_POST['email'])) {
+
+        $secret = 'SECRET_GOOGLE_RECAPTCHA';
+        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+        $responseData = json_decode($verifyResponse);
+        if ($responseData->success) {
+            $email = $_POST['email'];
+            $password = account()->hashPassword($_POST['password']);
+            if (query("SELECT * FROM user WHERE email=?", [$email])->rowCount() > 0 && $email != account()->getUser()['email']) {
+                $_SESSION['register_error_email'] = true;
+                header("Location: /Profile");
+                return true;
+            }
+            if ($password == account()->getUser()['password']) {
+                query("UPDATE user SET email=? WHERE username=?", [$email, $_SESSION['username']]);
+                $_SESSION['email'] = $email;
+                header("Location: ./");
+            } else {
+                $_SESSION['error_password'] = true;;
+                header("Location: ./");
+            }
+        } else {
+            header("Location: /Profile/?page=changeemail");
         }
     }
-    if(isset($_POST['resetpassword'])){
-        $pass1 = $_POST['pass1'];
-        $pass2 = $_POST['pass2'];
-        $pass3 = $_POST['pass3'];
-        $user = query("SELECT * FROM user WHERE username=?", [$_SESSION['username']])->fetch();
-        if(account()->hashPassword($pass1) != $user['password']){
-            $_SESSION['reset1'] = true;
+    if (isset($_POST['resetpassword'])) {
+
+        $secret = 'SECRET_GOOGLE_RECAPTCHA';
+        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+        $responseData = json_decode($verifyResponse);
+        if ($responseData->success) {
+            $pass1 = $_POST['pass1'];
+            $pass2 = $_POST['pass2'];
+            $pass3 = $_POST['pass3'];
+            $user = query("SELECT * FROM user WHERE username=?", [$_SESSION['username']])->fetch();
+            if (account()->hashPassword($pass1) != $user['password']) {
+                $_SESSION['reset1'] = true;
+                header("Location: ./?page=changepassword");
+                return true;
+            }
+            if ($pass2 != $pass3) {
+                $_SESSION['reset2'] = true;
+                header("Location: ./?page=changepassword");
+                return true;
+            }
+            if (query("UPDATE user SET password=? WHERE username=?", [account()->hashPassword($pass3), $_SESSION['username']])) {
+                $_SESSION['reset3'] = true;
+                header("Location: ./");
+            } else {
+                $_SESSION['reset4'] = true;
+                header("Location: ./?page=changepassword");
+            }
+        } else {
             header("Location: ./?page=changepassword");
-            return true;
-        }
-        if($pass2 != $pass3){
-            $_SESSION['reset2'] = true;
-            header("Location: ./?page=changepassword");
-            return true;
-        }
-        if(query("UPDATE user SET password=? WHERE username=?", [account()->hashPassword($pass3), $_SESSION['username']])){
-            $_SESSION['reset3'] = true;
-            header("Location: ./");
-        }else{
-            $_SESSION['reset4'] = true;
-            header("Location: ./?page=changepassword");
-            
         }
     }
 }

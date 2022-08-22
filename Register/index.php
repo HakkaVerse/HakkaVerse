@@ -1,6 +1,16 @@
-<?php require_once dirname(__FILE__)."/../_system/system.php";
-if(isset($_SESSION['username'])){
-  header("Location: /Home");
+<?php require_once dirname(__FILE__) . "/../_system/system.php";
+if (isset($_SESSION['username'])) {
+    header("Location: /Home");
+}
+if(isset($_GET['verify'])){
+    $code = $_GET['verify'];
+    if(query("SELECT * FROM verify WHERE encode=?", [$code])->rowCount() > 0){
+        $email = query("SELECT * FROM verify WHERE encode=?", [$code])->fetch()['email'];
+        $user = query("SELECT * FROM user WHERE email=?", [$email])->fetch();
+        account()->Login($user['username'], $user['password']);
+        query("DELETE FROM verify WHERE encode=?", [$code]);
+        $_SESSION['verify_success'] = true;
+    }
 }
 ?>
 <!doctype html>
@@ -33,10 +43,12 @@ if(isset($_SESSION['username'])){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
-    <?php require_once dirname(__FILE__)."/../alert_account.php"; ?>
+    <?php require_once dirname(__FILE__) . "/../alert_account.php"; ?>
     <div style="margin-top: 10%;">
         <div class="container">
             <div class="row">
@@ -45,8 +57,7 @@ if(isset($_SESSION['username'])){
                     <h3 class="mt-3" style="color: #F0A500;">เว็บไซต์สำหรับการเรียนรู้ด้านไซเบอร์</h3>
                     <p class="mt-3">เว็บไซต์ของเราเป็นแพลตฟอร์มในรูปแบบของ <b style="color: #F0A500;">E - Learning</b>
                         ที่ถูกสร้างขึ้นมาเพื่อจุดประสงค์ใน
-                        การเรียนรู้ และแบ่งปันความรู้ขั้นพื้นฐานในด้านของไซเบอร์และการทำ <b
-                            style="color: #F0A500;">Pentest</b>
+                        การเรียนรู้ และแบ่งปันความรู้ขั้นพื้นฐานในด้านของไซเบอร์และการทำ <b style="color: #F0A500;">Pentest</b>
                         เพื่อให้ผู้เรียนสามารถนำไปต่อยอดในสายงานที่เกี่ยวข้องกับ <b style="color: #F0A500;">Security</b>
                         หรือแม้แต่
                         นำไปประยุกต์ใช้กับเว็บไซต์ของตนเอง ได้อีกด้วยครับ</p>
@@ -56,8 +67,7 @@ if(isset($_SESSION['username'])){
 
                         </div>
                         <div class="col-lg-6 mt-3">
-                            <a href="../Register/" style="width: 100%; border-radius: 10px;"
-                                class="btn btn-gradient-border-login">สมัครสมาชิก</a>
+                            <a href="../Register/" style="width: 100%; border-radius: 10px;" class="btn btn-gradient-border-login">สมัครสมาชิก</a>
 
                         </div>
                     </div>
@@ -76,12 +86,30 @@ if(isset($_SESSION['username'])){
                         <div class="mt-2">
                             <input class="input" type="email" required name="email" autocomplete="off" placeholder="อีเมล....">
                         </div>
+
+                        <script>
+                            $(document).ready(function() {
+                                $("#show").click(function() {
+                                    if ($("#show").text() == "Show") {
+                                        $("#show").text("Hide");
+                                        $("#password").attr("type", 'text');
+                                    } else {
+                                        $("#show").text("Show");
+                                        $("#password").attr("type", 'password');
+                                    }
+                                });
+                            });
+                        </script>
                         <div class="mt-2">
-                            <input class="input" type="password" required name="password" autocomplete="off" placeholder="รหัสผ่าน....">
+                            <input class="input" type="password" id="password" required name="password" autocomplete="off" placeholder="รหัสผ่าน....">
+                            <a href="#" id="show" style="color: #7C747E; position: absolute; margin-left: -50px; margin-top: 22px;">Show</a>
+                        </div>
+                        <div class="mt-3">
+
+                            <div class="g-recaptcha" data-sitekey="6LeV8aYbAAAAAL-vjXHFWTAi7_yRc9BdFwHfb7Js"></div>
                         </div>
                         <div class="mt-4">
-                            <button type="submit" class="btn btn-gradient-login btn-glow-login"
-                                style="width:55%; border-radius: 10px;">สมัครสมาชิก</button>
+                            <button type="submit" class="btn btn-gradient-login btn-glow-login" style="width:55%; border-radius: 10px;">สมัครสมาชิก</button>
                         </div>
                     </form>
                 </div>

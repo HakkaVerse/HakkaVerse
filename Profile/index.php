@@ -36,6 +36,8 @@ $link = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME']."/upload/";
     <!-- Jquery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -62,7 +64,7 @@ $link = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME']."/upload/";
                         <a class="nav-link textw" href="../Lesson/">Lesson</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link textw" href="../Lesson/Test">Exercise</a>
+                        <a class="nav-link textw" href="../Lesson/Test">Test</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link textw" href="../Lab/">Lab</a>
@@ -85,21 +87,21 @@ $link = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME']."/upload/";
     <div class="container">
         <div class="row">
             <div class="col-lg-3" style="padding-top: 100px;">
-                <div class="custom-border text-white" style="width: 15rem;">
+                <div class="custom-border text-white" style="width: 15rem; height: 500px;">
                     <div
                         style="padding-left: 18px;font-size: 16px; font-weight: 600;position: relative; letter-spacing: 1px;">
                         <div class="mt-4">
                             <a href="?page=infomation" <?php if(!isset($_GET['page']) or $_GET['page'] == "infomation"){echo 'class="orange"';} ?> >ข้อมูลผู้ใช้</a>
                         </div>
-                        <div class="mt-4" style="line-height: 37.5px;">
+                        <!-- <div class="mt-4" style="line-height: 37.5px;">
                             <a href="?page=editprofile" <?php if(isset($_GET['page']) && $_GET['page'] == "editprofile"){echo 'class="orange"';} ?>>ปรับแต่งโปรไฟล์</a>
-                        </div>
+                        </div> -->
                         <div class="mt-4" style="line-height: 37.5px;">
                             <a href="?page=skill" <?php if(isset($_GET['page']) && $_GET['page'] == "skill"){echo 'class="orange"';} ?>>สกิลความสามารถ</a>
                         </div>
-                        <div class="mt-4" style="line-height: 37.5px;">
+                        <!-- <div class="mt-4" style="line-height: 37.5px;">
                             <a href="?page=connect" <?php if(isset($_GET['page']) && $_GET['page'] == "connect"){echo 'class="orange"';} ?>>เชื่อมต่อบัญชี</a>
-                        </div>
+                        </div> -->
                         <div class="mt-4" style="line-height: 37.5px;">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">ออกจากระบบ</a>
                         </div>
