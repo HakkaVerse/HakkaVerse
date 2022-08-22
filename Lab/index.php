@@ -107,7 +107,7 @@ if(!isset($_SESSION['username'])){
                         <a class="nav-link textw" href="../Lesson/">Lesson</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link textw" href="../Lesson/Test">Exercise</a>
+                        <a class="nav-link textw" href="../Lesson/Test">Test</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link textw active" href="../Lab/">Lab</a>
@@ -175,14 +175,11 @@ if(!isset($_SESSION['username'])){
 
         <!-- Link Youtube Lab XSS -->
         <div class="ratio ratio-16x9 mt-4">
-            <iframe style="border-radius: 30px;" src="https://www.youtube.com/embed/wC5iPHx5m2M" title="YouTube video"
+            <iframe style="border-radius: 30px;" src="https://www.youtube.com/embed/wy1YRV-amn0" title="YouTube video"
                 allowfullscreen></iframe>
         </div>
         <div class="mt-4 text-center">
             <a class="btn btn-secondary <?php if(account()->checkTestList() >= $lab){echo "btn-gradient";} ?>" <?php if(account()->checkTestList() >= $lab){echo "href='Cross_Site_Scripting'";} ?> style="width: 200px;">เข้าสู่แลปทดลอง</a>
-        </div>
-        <div class="mt-4 text-center">
-            <a class="btn btn-gradient-border" style="width: 200px;"><?php echo account()->checkTestList(); ?> / <?php echo $lab ?></a>
         </div>
 
         
@@ -208,14 +205,11 @@ if(!isset($_SESSION['username'])){
         </div>
         <!-- Link Youtube Lab XSS -->
         <div class="ratio ratio-16x9 mt-4">
-            <iframe style="border-radius: 30px;" src="https://www.youtube.com/embed/wC5iPHx5m2M" title="YouTube video"
+            <iframe style="border-radius: 30px;" src="https://www.youtube.com/embed/wy1YRV-amn0" title="YouTube video"
                 allowfullscreen></iframe>
         </div>
         <div class="mt-4 text-center">
             <a class="btn btn-secondary <?php if(account()->checkTestList() >= $lab){echo "btn-gradient";} ?>" <?php if(account()->checkTestList() >= $lab){echo "href='SQLInjection'";} ?> style="width: 200px;">เข้าสู่แลปทดลอง</a>
-        </div>
-        <div class="mt-4 text-center">
-            <a class="btn btn-gradient-border" style="width: 200px;"><?php echo account()->checkTestList(); ?> / <?php echo $lab ?></a>
         </div>
 
 
@@ -243,17 +237,19 @@ if(!isset($_SESSION['username'])){
         </div>
         <!-- Link Youtube Lab XSS -->
         <div class="ratio ratio-16x9 mt-4">
-            <iframe style="border-radius: 30px;" src="https://www.youtube.com/embed/wC5iPHx5m2M" title="YouTube video"
+            <iframe style="border-radius: 30px;" src="https://www.youtube.com/embed/wy1YRV-amn0" title="YouTube video"
                 allowfullscreen></iframe>
         </div>
         <div class="mt-4 text-center">
             <a class="btn btn-secondary <?php if(account()->checkTestList() >= $lab){echo "btn-gradient";} ?>" <?php if(account()->checkTestList() >= $lab){echo "href='Security'";} ?> style="width: 200px;">เข้าสู่แลปทดลอง</a>
         </div>
-        <div class="mt-4 text-center">
-            <a class="btn btn-gradient-border" style="width: 200px;"><?php echo account()->checkTestList(); ?> / <?php echo $lab ?></a>
-        </div>
     </div>
     </div>
+
+    
+    <?php
+    require_once("../totop.php");
+    ?>
     <!-- Parallax start -->
     <div class="parallax"></div>
     <!-- Parallax end -->
